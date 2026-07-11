@@ -76,7 +76,7 @@ export function CatalogueSection() {
         <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
           The KDS ERP Crew Agent Library
         </h2>
-        <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-3 max-w-5xl text-base leading-relaxed text-muted-foreground">
           Explore the complete KDS ERP Crew AI Agent Library, featuring
           intelligent AI agents for Microsoft Dynamics 365 across Finance,
           Sales, Procurement, Supply Chain, Manufacturing, Retail, Healthcare,
