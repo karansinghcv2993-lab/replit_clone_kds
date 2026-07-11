@@ -41,7 +41,7 @@ export function HighlightsSection() {
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
           Experience AI Agents in Action
         </h2>
-        <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-3 max-w-screen-xl text-base leading-relaxed text-muted-foreground">
           Discover featured KDS ERP Crew AI agents built for Microsoft Dynamics
           365. Explore intelligent solutions across Order to Cash, Procure to
           Pay, Supply Chain, Finance, Manufacturing, Retail, Healthcare, BFSI,
