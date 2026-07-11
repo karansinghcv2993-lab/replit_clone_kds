@@ -27,7 +27,7 @@ export function SolutionsSection() {
           End-to-End Business Process Automation
         </h2>
         <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
-          <p className="max-w-5xl text-base leading-relaxed text-muted-foreground">
+          <p className="max-w-full text-base leading-relaxed text-muted-foreground">
             KDS ERP Crew brings together intelligent AI agents that work
             seamlessly across Microsoft Dynamics 365 to automate business
             processes from start to finish. Each agent performs specialized
