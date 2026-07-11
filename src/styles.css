@@ -57,17 +57,17 @@
   --muted: oklch(0.96 0.008 250);
   --muted-foreground: oklch(0.5 0.02 260);
 
-  /* Brand: MyWave electric blue */
-  --brand: oklch(0.58 0.22 258);
+  /* Brand: KDS teal */
+  --brand: #2ababe;
   --brand-foreground: oklch(0.99 0 0);
-  --brand-soft: oklch(0.95 0.04 258);
-  --primary: oklch(0.58 0.22 258);
+  --brand-soft: oklch(0.95 0.04 192);
+  --primary: #2ababe;
   --primary-foreground: oklch(0.99 0 0);
 
   --secondary: oklch(0.96 0.008 250);
   --secondary-foreground: oklch(0.21 0.03 265);
-  --accent: oklch(0.95 0.04 258);
-  --accent-foreground: oklch(0.35 0.15 258);
+  --accent: oklch(0.94 0.05 192);
+  --accent-foreground: #1a8a8d;
 
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
