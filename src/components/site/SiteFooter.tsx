@@ -3,7 +3,7 @@ import { toast } from "sonner";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-hero px-6 py-12 text-hero-foreground md:px-10">
+    <footer className="px-6 py-12 text-hero-foreground md:px-10" style={{ backgroundColor: "#051895" }}>
       <div className="mx-auto max-w-screen-2xl">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
           <div className="max-w-md">
