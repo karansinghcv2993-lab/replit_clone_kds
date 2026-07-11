@@ -10,7 +10,7 @@ function scrollTo(id: string) {
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-hero text-hero-foreground">
+    <section className="relative overflow-hidden text-hero-foreground" style={{ backgroundColor: "#051895" }}>
       <img
         src={heroWave}
         alt=""
