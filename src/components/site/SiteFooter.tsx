@@ -13,19 +13,19 @@ export function SiteFooter() {
               business processes, orchestrate cross-functional workflows, and
               deliver intelligent, policy-driven enterprise operations.
             </p>
-            <div className="mt-5 flex gap-6">
-              <div>
+          </div>
+
+          <div className="flex flex-col items-start gap-2 text-sm md:items-end md:self-end">
+            <div className="flex gap-6 mb-3">
+              <div className="md:text-right">
                 <p className="text-2xl font-bold text-hero-foreground">150+</p>
                 <p className="mt-0.5 text-xs text-hero-muted">AI Agents</p>
               </div>
-              <div className="border-l border-white/10 pl-6">
+              <div className="border-l border-white/10 pl-6 md:text-right">
                 <p className="text-sm font-semibold text-hero-foreground">Across 11 Business</p>
                 <p className="text-xs text-hero-muted">Process Categories</p>
               </div>
             </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-2 text-sm md:items-end md:self-end">
             <button
               onClick={() =>
                 toast("External link disabled in this preview", {
