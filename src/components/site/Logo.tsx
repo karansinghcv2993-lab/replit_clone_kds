@@ -19,7 +19,7 @@ export function Logo({ className = "" }: { className?: string }) {
         />
       </svg>
       <span className="text-xl font-semibold tracking-tight">
-        MYWAVE<span className="opacity-80">.ai</span>
+        KDS ERP Crew
       </span>
     </div>
   );

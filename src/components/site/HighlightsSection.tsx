@@ -4,7 +4,7 @@ import { Sparkles, PlayCircle, ArrowRight, CheckCircle2 } from "lucide-react";
 import { DemoModal } from "./DemoModal";
 import { toast } from "sonner";
 
-type TabId = "o2c" | "p2p" | "sc" | "cf" | "sap";
+type TabId = "o2c" | "p2p" | "sc" | "cf" | "d365ba";
 
 const TABS: {
   id: TabId;
@@ -13,11 +13,11 @@ const TABS: {
   cats: AgentCategory[];
   totalHint: string;
 }[] = [
-  { id: "o2c", label: "Order to Cash", short: "O2C", cats: ["O2C"], totalHint: "See all 44 O2C agents" },
-  { id: "p2p", label: "Procure to Pay", short: "P2P", cats: ["P2P"], totalHint: "See all 38 P2P agents" },
-  { id: "sc", label: "Supply Chain", short: "SC", cats: ["Supply Chain"], totalHint: "See all 38 Supply Chain agents" },
-  { id: "cf", label: "Cross-Functional", short: "CF", cats: ["Platform", "Insurance"], totalHint: "See all 30 Platform agents" },
-  { id: "sap", label: "SAP Business One", short: "SAP", cats: ["SAP B1"], totalHint: "See all 48 SAP B1 agents" },
+  { id: "o2c",   label: "Order to Cash",                short: "O2C",  cats: ["O2C"],      totalHint: "See all O2C agents in the catalogue" },
+  { id: "p2p",   label: "Procure to Pay",               short: "P2P",  cats: ["P2P"],      totalHint: "See all P2P agents in the catalogue" },
+  { id: "sc",    label: "Supply Chain",                  short: "SC",   cats: ["Supply Chain"], totalHint: "See all Supply Chain agents" },
+  { id: "cf",    label: "Cross Functional",              short: "CF",   cats: ["Platform"], totalHint: "See all Platform agents in the catalogue" },
+  { id: "d365ba",label: "Dynamics 365 Business Agents", short: "D365", cats: ["D365 BA"],  totalHint: "See all Dynamics 365 Business Agents" },
 ];
 
 export function HighlightsSection() {
@@ -39,12 +39,14 @@ export function HighlightsSection() {
           Agent Highlights
         </div>
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-          See agents in action
+          Experience AI Agents in Action
         </h2>
         <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
-          28 featured agents with live video demos — covering Order to Cash,
-          Procure to Pay, Supply Chain, Cross-Functional workflows, and SAP
-          Business One. Click any agent to watch the demo.
+          Discover featured KDS ERP Crew AI agents built for Microsoft Dynamics
+          365. Explore intelligent solutions across Order to Cash, Procure to
+          Pay, Supply Chain, Finance, Manufacturing, Retail, Healthcare, BFSI,
+          and more. Select any agent to learn how it transforms business
+          operations.
         </p>
 
         {/* Tab bar */}
@@ -114,8 +116,8 @@ export function HighlightsSection() {
             Need something more specialised?
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Explore the full catalogue of 352+ agents across all industries and
-            process variants below.
+            Explore the complete KDS ERP Crew AI Agent Library with 90+ agents
+            across all industries and process categories below.
           </p>
           <button
             onClick={() =>

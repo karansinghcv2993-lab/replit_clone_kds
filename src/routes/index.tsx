@@ -9,17 +9,17 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AI Agent Catalogue — MyWave AI" },
+      { title: "Enterprise AI Agent Catalogue — KDS ERP Crew" },
       {
         name: "description",
         content:
-          "A library of 352+ enterprise AI agents designed to automate, orchestrate, and govern complex business processes across Order to Cash, Procure to Pay, Supply Chain, Finance, and SAP Business One.",
+          "A comprehensive library of enterprise AI agents built to automate, orchestrate, and optimize business processes across Microsoft Dynamics 365.",
       },
-      { property: "og:title", content: "AI Agent Catalogue — MyWave AI" },
+      { property: "og:title", content: "Enterprise AI Agent Catalogue — KDS ERP Crew" },
       {
         property: "og:description",
         content:
-          "352+ enterprise AI agents for finance, supply chain, insurance, banking, healthcare, and SAP Business One.",
+          "90+ enterprise AI agents for Microsoft Dynamics 365 across Finance, Sales, Procurement, Supply Chain, Manufacturing, Retail, Healthcare, BFSI, Insurance, and more.",
       },
     ],
   }),

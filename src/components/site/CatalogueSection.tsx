@@ -12,6 +12,22 @@ import { toast } from "sonner";
 
 type Filter = "All" | AgentCategory;
 
+const FILTER_LABELS: Record<AgentCategory, string> = {
+  "O2C": "O2C",
+  "P2P": "P2P",
+  "Supply Chain": "Supply Chain",
+  "Finance": "Finance",
+  "Platform": "Platform",
+  "Insurance": "Insurance",
+  "Manufacturing": "Manufacturing",
+  "Retail & CPG": "Retail & CPG",
+  "Healthcare": "Healthcare",
+  "Trade Finance": "Trade Finance",
+  "BFSI": "BFSI",
+  "D365": "D365",
+  "D365 BA": "D365 Business",
+};
+
 const FILTERS: Filter[] = [
   "All",
   "O2C",
@@ -24,8 +40,9 @@ const FILTERS: Filter[] = [
   "Retail & CPG",
   "Healthcare",
   "Trade Finance",
-  "Banking",
-  "SAP B1",
+  "BFSI",
+  "D365",
+  "D365 BA",
 ];
 
 export function CatalogueSection() {
@@ -57,22 +74,23 @@ export function CatalogueSection() {
           </span>
         </div>
         <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-          Full Agent Library
+          The KDS ERP Crew Agent Library
         </h2>
         <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
-          The complete MyWave agent library — spanning core finance processes,
-          industry-specific variants, banking, insurance, high tech, CPG, and
-          manufacturing. These agents serve as a foundation for your deployment;
-          each requires configuration, integration, and adaptation to your
-          specific environment.
+          Explore the complete KDS ERP Crew AI Agent Library, featuring
+          intelligent AI agents for Microsoft Dynamics 365 across Finance,
+          Sales, Procurement, Supply Chain, Manufacturing, Retail, Healthcare,
+          BFSI, Insurance, and more. Each agent is designed to automate
+          business processes, enhance productivity, and deliver enterprise-grade
+          AI automation.
         </p>
         <div className="mt-3 inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2 text-xs font-semibold text-amber-800">
-          All agents require configuration and deployment in partnership with
-          MyWave.
+          Every AI agent is configured, customized, and deployed by Key
+          Dynamics Solutions to fit your unique business needs.
           <button
             onClick={() =>
-              toast("External link disabled in this clone", {
-                description: "Would open mywave.ai contact page",
+              toast("External link disabled in this preview", {
+                description: "Would open Key Dynamics Solutions contact page",
               })
             }
             className="underline hover:text-amber-900"
@@ -91,6 +109,7 @@ export function CatalogueSection() {
                     ? AGENTS.length
                     : (CATEGORY_COUNTS[f as AgentCategory] ?? 0);
                 const active = f === filter;
+                const label = f === "All" ? "All" : FILTER_LABELS[f as AgentCategory];
                 return (
                   <button
                     key={f}
@@ -101,7 +120,7 @@ export function CatalogueSection() {
                         : "border-border bg-white text-foreground hover:border-brand hover:text-brand"
                     }`}
                   >
-                    {f}
+                    {label}
                     <span
                       className={`rounded-full px-1.5 text-[10px] font-semibold ${
                         active ? "bg-white/25" : "bg-muted"
@@ -127,7 +146,7 @@ export function CatalogueSection() {
             <span className="font-semibold text-foreground">
               {filtered.length}
             </span>{" "}
-            shown{filter !== "All" ? ` in ${filter}` : ""}
+            shown{filter !== "All" ? ` in ${filter === "D365 BA" ? "D365 Business" : filter}` : ""}
             {q ? ` matching "${q}"` : ""}
           </p>
         </div>
@@ -141,7 +160,7 @@ export function CatalogueSection() {
             >
               <div className="flex items-start justify-between gap-2">
                 <span className="inline-flex shrink-0 items-center rounded-full bg-brand-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand">
-                  {a.cat}
+                  {FILTER_LABELS[a.cat]}
                 </span>
                 {a.demo && (
                   <button

@@ -25,12 +25,14 @@ export function HeroSection() {
 
         <div className="mt-14 max-w-2xl md:mt-20">
           <h1 className="text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl">
-            AI Agent Catalogue
+            Enterprise AI Agent Catalogue
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-hero-muted md:text-lg">
-            A library of enterprise AI agents designed to automate, orchestrate,
-            and govern complex business processes. Each agent is built for
-            configuration and deployment in partnership with your team.
+            A comprehensive library of enterprise AI agents built to automate,
+            orchestrate, and optimize business processes across Microsoft
+            Dynamics 365. Every AI agent is designed for seamless integration,
+            intelligent automation, and tailored deployment to meet your
+            organization's unique business needs.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -46,28 +48,28 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 rounded-full border border-hero-tile-border bg-hero-tile px-5 py-2.5 text-sm font-medium text-hero-foreground backdrop-blur transition hover:bg-white/10"
             >
               <BookOpen className="h-4 w-4" />
-              Full Agent Catalogue
+              Complete AI Agent Catalogue
             </button>
             <button
               onClick={() =>
-                toast("External link disabled in this clone", {
-                  description: "Would navigate to mywave.ai",
+                toast("External link disabled in this preview", {
+                  description: "Would navigate to Key Dynamic Solutions",
                 })
               }
               className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-hero transition hover:bg-white/90"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to MyWave.ai
+              Back to Key Dynamic Solutions
             </button>
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 md:grid-cols-4 md:gap-4">
-            <StatTile value="352+" label="Total Agents" />
-            <StatTile value="7" label="Business Functions" />
+            <StatTile value="90+" label="AI Agents" />
+            <StatTile value="21+" label="Business Functions" />
             <StatTile value="10+" label="Industries Covered" />
             <StatTile
               value={<CheckCircle2 className="h-6 w-6 text-brand" />}
-              label="SAP Certified"
+              label="Microsoft Dynamics 365 Ready"
             />
           </div>
         </div>

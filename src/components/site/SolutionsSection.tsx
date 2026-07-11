@@ -21,26 +21,29 @@ export function SolutionsSection() {
       <div className="mx-auto max-w-screen-2xl">
         <div className="mb-2 inline-flex items-center gap-2 rounded-md bg-foreground px-2 py-1 text-xs font-semibold uppercase tracking-widest text-background">
           <Network className="h-3.5 w-3.5" />
-          How Agents Work Together
+          How AI Agents Work Together
         </div>
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-          End-to-End Process Solutions
+          End-to-End Business Process Automation
         </h2>
         <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
           <p className="max-w-3xl text-base leading-relaxed text-muted-foreground">
-            Individual agents are powerful. Together, they orchestrate entire
-            business processes — from first signal to final settlement. Click
-            any process to see the full agent-by-agent flow.
+            KDS ERP Crew brings together intelligent AI agents that work
+            seamlessly across Microsoft Dynamics 365 to automate business
+            processes from start to finish. Each agent performs specialized
+            tasks, shares contextual data, and orchestrates workflows to deliver
+            faster decisions, higher productivity, and intelligent business
+            outcomes.
           </p>
           <button
             onClick={() =>
-              toast("External link disabled in this clone", {
-                description: "Would open /solutions",
+              toast("External link disabled in this preview", {
+                description: "Would open all AI solutions",
               })
             }
             className="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline"
           >
-            View all solutions <ArrowRight className="h-4 w-4" />
+            View All AI Solutions <ArrowRight className="h-4 w-4" />
           </button>
         </div>
 
@@ -100,8 +103,9 @@ export function SolutionsSection() {
                 </span>
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
-                The detailed step-by-step flow lives on a dedicated solution
-                page on the original site — not included in this clone.
+                Contact Key Dynamics Solutions to explore the detailed
+                step-by-step flow and configure this solution for your
+                organization.
               </p>
             </>
           )}

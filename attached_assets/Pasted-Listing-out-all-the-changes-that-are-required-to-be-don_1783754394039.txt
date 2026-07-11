@@ -1,0 +1,480 @@
+Listing out all the changes that are required to be done in the website
+Replace mywave.ai with Key Dynamics Solution
+Replace AI Agent Catalogue to Enterprise AI Agent Catalogue
+Content to be replace with the following:
+A comprehensive library of enterprise AI agents built to automate, orchestrate, and optimize business processes across Microsoft Dynamics 365. Every AI agent is designed for seamless integration, intelligent automation, and tailored deployment to meet your organization's unique business needs.
+Agent Highlights
+Complete AI Agent Catalogue
+Replace Back to mywave.ai with Key Dynamic Solutions
+352+ to 90+
+Total Agent to AI Agents
+21 +
+Business Functions
+10+
+Industries Covered
+✓
+Sap Certifier to be replaced with Microsoft Dynamics 365 Ready
+ 
+ 
+In the Agent Highlight section, the following cards to be replaced with the following content
+In section Order to Cash update the cards content as following
+Experience AI Agents in Action
+Discover featured KDS ERP Crew AI agents built for Microsoft Dynamics 365. Explore intelligent solutions across Order to Cash, Procure to Pay, Supply Chain, Finance, Manufacturing, Retail, Healthcare, BFSI, and more. Select any agent to learn how it transforms business operations.
+ 
+Sales Order Creation Agent
+Demo  Automatically creates sales orders from quotations, CRM opportunities, customer emails, or online requests, validating customer details, pricing, inventory availability, and delivery schedules within Microsoft Dynamics 365. ▶ Watch Demo
+ 
+Contract & Agreement Management Agent
+Demo  Converts approved customer contracts and service agreements into sales orders, subscriptions, or recurring transactions while ensuring compliance with agreed pricing and delivery terms. ▶ Watch Demo
+ 
+Invoice Generation Agent
+Demo  Automatically generates customer invoices from completed deliveries or fulfilled services, applying the correct tax rules, payment terms, and billing preferences through Microsoft Dynamics 365 Finance. ▶ Watch Demo
+ 
+Order Validation & Exception Resolution Agent
+Demo  Identifies and resolves order processing issues caused by pricing discrepancies, inventory shortages, customer credit limits, or incomplete master data before order fulfilment. ▶ Watch Demo
+ 
+Update the Procure to Pay cards content with following
+Purchase Requisition Agent
+Demo  Automatically captures purchase requests from users, inventory shortages, or demand forecasts, creating purchase requisitions with the correct departments, cost centers, approval workflows, and procurement policies in Microsoft Dynamics 365. ▶ Watch Demo
+ 
+Procurement Management Agent
+Demo  Manages the complete procurement lifecycle, including supplier selection, purchase order creation, approval routing, contract validation, and procurement tracking to ensure efficient and compliant purchasing. ▶ Watch Demo
+ 
+Invoice Matching Agent
+Demo  Performs intelligent two-way and three-way invoice matching between purchase orders, goods receipts, and supplier invoices, automatically identifying discrepancies for faster resolution. ▶ Watch Demo
+ 
+Goods Receipt Agent
+Demo  Automates goods receipt processing by validating received quantities, updating inventory records, and synchronizing warehouse transactions with Microsoft Dynamics 365 in real time. ▶ Watch Demo
+ 
+Invoice Exception Agent
+Demo  Detects and resolves invoice exceptions such as pricing differences, quantity mismatches, duplicate invoices, or missing purchase orders through intelligent workflow automation. ▶ Watch Demo
+ 
+Vendor Onboarding Agent
+Demo  Guides new suppliers through registration, document verification, compliance checks, tax validation, and vendor master creation to accelerate supplier onboarding within Microsoft Dynamics 365. ▶ Watch Demo
+ 
+Supplier Performance Agent
+Demo  Continuously monitors supplier performance by analyzing delivery timelines, quality metrics, pricing compliance, and contract adherence, providing AI-driven recommendations to improve procurement decisions. ▶ Watch Demo
+ 
+Predictive Equipment Maintenance Agent
+Demo  Uses AI, IoT sensor data, and equipment performance history to predict machine failures before they cause production disruptions, enabling proactive maintenance and minimizing unplanned downtime. ▶ Watch Demo
+ 
+Update the Supply chain cards content with following
+Production Quality Monitoring Agent
+Demo  Continuously monitors production parameters and quality metrics, detecting deviations early to maintain product consistency, reduce waste, and ensure compliance with manufacturing standards. ▶ Watch Demo
+ 
+Downtime Intelligence Agent
+Demo  Analyzes production downtime events to identify root causes, eliminate false downtime records, and provide AI-driven recommendations that improve equipment utilization and overall manufacturing efficiency. ▶ Watch Demo
+Predictive Equipment Maintenance Agent
+Demo  Uses AI, IoT sensor data, and equipment performance history to predict machine failures before they cause production disruptions, enabling proactive maintenance and minimizing unplanned downtime. ▶ Watch Demo
+ 
+Production Quality Monitoring Agent
+Demo  Continuously monitors production parameters and quality metrics, detecting deviations early to maintain product consistency, reduce waste, and ensure compliance with manufacturing standards. ▶ Watch Demo
+ 
+Downtime Intelligence Agent
+Demo  Analyzes production downtime events to identify root causes, eliminate false downtime records, and provide AI-driven recommendations that improve equipment utilization and overall manufacturing efficiency. ▶ Watch Demo
+ 
+Update Cross Functional cards content with the following 
+Approval Workflow Agent
+Demo  Automates multi-level approval workflows for procurement, finance, sales, and HR by routing requests based on business rules, approval hierarchies, and organizational policies within Microsoft Dynamics 365. ▶ Watch Demo
+ 
+Workflow Automation Agent
+Demo  Streamlines cross-functional business processes by automating task assignments, notifications, escalations, and approvals, ensuring seamless collaboration across departments and Microsoft Dynamics 365 applications. ▶ Watch Demo
+ 
+Document Intelligence Agent
+Demo  Extracts, validates, and processes data from invoices, purchase orders, contracts, and business documents using AI, reducing manual data entry and improving operational accuracy. ▶ Watch Demo
+ 
+Management Insight Assistant
+Demo  Provides executives and business users with real-time dashboards, KPIs, predictive analytics, and conversational insights by connecting Microsoft Dynamics 365, Power BI, Microsoft Fabric, and enterprise data sources. ▶ Watch Demo
+ 
+Change SAP Business to Dynamics 365 Business Agents
+And update the content with the following
+Management Insight Assistant
+Coming Soon
+Ask questions in natural language and instantly interact with Microsoft Dynamics 365 using AI.
+·      Query customers, vendors, sales, inventory, finance, and operations 
+·      Create, update, or retrieve records across Dynamics 365 modules 
+·      Conversational AI with no predefined workflows 
+·      Secure, role-based access with governance controls 
+·      Integrated with Microsoft Dynamics 365, Power BI, and Microsoft Fabric 
+Value: Instantly access and manage Microsoft Dynamics 365 data without navigating complex screens.
+ 
+Customer & Vendor Management Agent
+Demo
+Create new customers or vendors, or update existing records using natural language.
+·      Intelligent duplicate detection 
+·      Customer and vendor master data management 
+·      AI-powered data validation and corrections 
+·      Direct create and update in Microsoft Dynamics 365 
+·      Multi-record processing 
+Value: Eliminates manual master data entry while accelerating customer and supplier onboarding.
+ 
+Sales Quotation & Order Agent
+Demo
+Upload PDFs, Excel files, emails, or customer documents and automatically generate quotations or sales orders.
+·      AI-powered document extraction (OCR + LLM) 
+·      Customer and product matching 
+·      Quote-to-sales order conversion 
+·      Multi-document processing 
+·      Pricing and inventory validation 
+Value: Converts unstructured customer requests into accurate Microsoft Dynamics 365 sales transactions.
+ 
+Accounts Receivable & Payable Agent
+Demo
+Automates invoice processing for customers and suppliers with intelligent financial validation.
+·      Customer invoice generation 
+·      Supplier invoice processing 
+·      AI-powered invoice data extraction 
+·      Purchase order and invoice matching 
+·      Automated posting in Microsoft Dynamics 365 Finance 
+Value: Accelerates financial processing while improving accuracy and compliance.
+ 
+Customer Service Agent
+Demo
+Manage customer service requests from creation through resolution using AI-powered automation.
+·      Automatically create and update service cases 
+·      Intelligent case routing and prioritization 
+·      SLA monitoring and escalation 
+·      Knowledge-based resolution recommendations 
+·      Integrated with Microsoft Dynamics 365 Customer Service 
+Value: Deliver faster issue resolution and exceptional customer experiences through intelligent service automation.
+ 
+Activity & Task Management Agent
+Demo
+Automatically creates activities, appointments, follow-ups, and tasks across Microsoft Dynamics 365.
+·      AI-generated tasks and reminders 
+·      Links activities to customers, sales opportunities, service cases, and projects 
+·      Intelligent follow-up scheduling 
+·      Calendar and collaboration integration 
+·      Automated activity tracking 
+Value: Keeps customer interactions, sales activities, and business processes organized without manual updates.
+ 
+Update the How AI Agents Work Together with the following data in their respective places
+Replace content End-to-End Process Solutions to End-to-End Business Process Automation
+Also update the following content as 
+KDS ERP Crew brings together intelligent AI agents that work seamlessly across Microsoft Dynamics 365 to automate business processes from start to finish. Each agent performs specialized tasks, shares contextual data, and orchestrates workflows to deliver faster decisions, higher productivity, and intelligent business outcomes.
+ 
+ 
+View All AI Solutions
+Now all the respective cards should be updated with the following content
+9 Steps
+Order to Cash — Intelligent Revenue Management
+From opportunity creation to customer payment, AI agents streamline the complete sales lifecycle. Sales opportunities convert into quotations, which automatically generate sales orders in Microsoft Dynamics 365. Inventory availability is validated, deliveries are scheduled, invoices are generated, and collections are intelligently monitored for faster cash realization.
+90% Automation • Hours Instead of Days
+ 
+8 Steps
+Procure to Pay — Smart Procurement Automation
+Automate procurement from purchase requests to supplier payments. AI agents validate demand, recommend suppliers, create purchase orders, monitor receipts, perform three-way invoice matching, and optimize vendor payments through Microsoft Dynamics 365 Supply Chain Management.
+88% Automation • Same-Day Procurement
+ 
+6 Steps
+Vendor Lifecycle Management
+Digitize supplier onboarding, compliance, contract management, and performance monitoring. AI agents continuously evaluate supplier risk, monitor KPIs, and maintain vendor records to strengthen procurement efficiency.
+80% Automation • Rapid Vendor Onboarding
+ 
+8 Steps
+Manufacturing & Production Operations
+Optimize production planning, shop floor execution, inventory movement, and quality control using Microsoft Dynamics 365. AI agents monitor production, predict equipment issues, and ensure product quality through intelligent automation.
+85% Automation • Real-Time Production Visibility
+ 
+7 Steps
+Financial Close & Reporting
+Accelerate month-end and year-end financial closing. AI agents automate journal validation, reconciliations, approvals, compliance checks, and financial reporting to reduce manual effort and improve accuracy.
+87% Automation • Close in Days, Not Weeks
+ 
+7 Steps
+Inventory & Warehouse Operations
+Manage inventory across warehouses with AI-driven forecasting, replenishment, picking, packing, and shipment optimization. Warehouse agents continuously monitor stock levels and improve fulfillment accuracy.
+84% Automation • Real-Time Inventory Control
+ 
+7 Steps
+Customer Service Lifecycle
+Deliver exceptional customer experiences with AI-powered case management, service scheduling, knowledge recommendations, SLA tracking, and automated issue resolution through Microsoft Dynamics 365 Customer Service.
+83% Automation • Faster Issue Resolution
+ 
+8 Steps
+Project Operations Management
+Coordinate project planning, resource allocation, budgeting, execution, and billing with AI agents that optimize schedules, monitor progress, and provide real-time project insights.
+82% Automation • Improved Project Delivery
+ 
+6 Steps
+Human Resources & Employee Experience
+Automate employee onboarding, leave management, payroll inputs, performance reviews, and workforce analytics using AI agents integrated with Microsoft Dynamics 365 Human Resources.
+86% Automation • Smarter HR Operations
+ 
+8 Steps
+Sustainability & Compliance
+Monitor ESG initiatives, regulatory compliance, audits, emissions tracking, and sustainability reporting. AI agents proactively identify compliance risks and generate intelligent recommendations.
+81% Automation • Continuous Compliance Monitoring
+ 
+7 Steps
+Demand Planning & Supply Chain Intelligence
+Predict demand, optimize inventory, recommend replenishment strategies, and synchronize procurement with production using AI-driven forecasting integrated with Microsoft Dynamics 365 Supply Chain Management.
+89% Automation • Continuous Planning
+ 
+6 Steps
+Employee Expense Management
+Automate expense submission, policy validation, approvals, reimbursement processing, and financial reconciliation through intelligent workflows.
+92% Automation • 24-Hour Reimbursement Cycle
+ 
+5 Steps
+Management Insight Assistant
+Ask business questions in natural language and receive real-time insights from Microsoft Dynamics 365, Power BI, Microsoft Fabric, and connected business applications. The AI assistant consolidates data across departments to deliver analytics, KPI tracking, and actionable recommendations.
+100% AI-Powered Insights • Instant Business Intelligence
+ 
+7 Steps
+Microsoft Dynamics 365 Sales Automation
+Manage the complete sales journey with AI—from lead qualification and opportunity management to quotations, sales orders, invoicing, and customer payments. AI agents eliminate repetitive tasks while improving sales productivity and forecasting accuracy.
+91% Automation • Accelerated Revenue Cycle
+ 
+7 Steps
+Microsoft Dynamics 365 Procurement Automation
+Automate purchasing from supplier onboarding to invoice processing. AI agents create purchase orders, validate invoices, perform three-way matching, reconcile payments, and optimize procurement performance.
+89% Automation • End-to-End Procurement
+ 
+6 Steps
+Microsoft Dynamics 365 Field Service
+Deliver intelligent field service experiences with automated work order creation, technician scheduling, predictive maintenance, spare parts management, and service invoicing powered by AI.
+84% Automation • SLA-Driven Service Delivery
+ 
+___________________________________________________________
+REPLACE THE FULL AGENT LIBRARY WITH FULL CATALOGUE
+And update all the catalogue content using the following data
+Complete AI Agent Catalogue
+The KDS ERP Crew Agent Library
+Explore the complete KDS ERP Crew AI Agent Library, featuring intelligent AI agents for Microsoft Dynamics 365 across Finance, Sales, Procurement, Supply Chain, Manufacturing, Retail, Healthcare, BFSI, Insurance, and more. Each agent is designed to automate business processes, enhance productivity, and deliver enterprise-grade AI automation.
+Every AI agent is configured, customized, and deployed by Key Dynamics Solutions to fit your unique business needs. Contact us to get started →
+ 
+Order to Cash (O2C)
+Sales Order Creation Agent
+Automatically creates sales orders from quotations, customer emails, CRM opportunities, and portal requests while validating pricing, inventory availability, and customer information in Microsoft Dynamics 365.
+Sales Quotation Agent
+Generates intelligent quotations using customer history, pricing agreements, product availability, and discount policies.
+Order Validation Agent
+Validates customer details, credit limits, taxes, pricing, and order information before confirmation.
+Inventory Availability Agent
+Checks available inventory across warehouses and recommends fulfilment options in real time.
+Delivery Scheduling Agent
+Coordinates warehouse operations, transportation, and customer delivery schedules for timely fulfilment.
+Invoice Generation Agent
+Automatically generates invoices after shipment confirmation with correct tax codes and payment terms.
+Payment Collection Agent
+Monitors outstanding invoices, automates reminders, and provides collection recommendations.
+Order Status Agent
+Provides real-time order tracking and shipment updates through conversational AI.
+ 
+Procure to Pay (P2P)
+Purchase Requisition Agent
+Captures procurement requests and routes them through approval workflows.
+Supplier Recommendation Agent
+Identifies preferred suppliers based on pricing, quality, delivery performance, and contracts.
+Purchase Order Agent
+Creates purchase orders automatically from approved requisitions in Microsoft Dynamics 365.
+Goods Receipt Agent
+Tracks inbound deliveries and validates received quantities.
+Invoice Matching Agent
+Performs intelligent two-way and three-way invoice matching.
+Vendor Payment Agent
+Schedules supplier payments based on payment terms and approvals.
+Contract Compliance Agent
+Monitors supplier contracts and purchasing compliance.
+Procurement Analytics Agent
+Provides procurement spend analysis and supplier performance insights.
+ 
+Supply Chain
+Demand Forecasting Agent
+Predicts future demand using AI and historical sales data.
+Inventory Optimization Agent
+Maintains optimal inventory levels while minimizing excess stock.
+Warehouse Operations Agent
+Optimizes warehouse picking, packing, and inventory movement.
+Shipment Tracking Agent
+Provides real-time shipment visibility across logistics partners.
+Replenishment Planning Agent
+Automatically recommends replenishment based on inventory thresholds.
+Supplier Collaboration Agent
+Improves supplier communication and delivery coordination.
+Distribution Planning Agent
+Optimizes warehouse allocation and product distribution.
+Supply Chain Visibility Agent
+Provides end-to-end supply chain monitoring and exception alerts.
+ 
+Finance & Accounting
+Accounts Payable Agent
+Automates supplier invoice processing and approvals.
+Accounts Receivable Agent
+Tracks customer invoices, collections, and payment status.
+Bank Reconciliation Agent
+Matches bank transactions with financial records automatically.
+Budget Planning Agent
+Monitors budgets and forecasts financial performance.
+Cash Flow Forecasting Agent
+Predicts cash inflows and liquidity requirements.
+Financial Close Agent
+Accelerates month-end and year-end financial closing.
+Expense Management Agent
+Validates employee expenses and reimbursement requests.
+Financial Reporting Agent
+Generates financial statements and executive reports.
+ 
+Cross Functional & Platform
+Management Insight Agent
+Provides AI-powered dashboards and executive insights across Microsoft Dynamics 365.
+Natural Language Query Agent
+Allows users to ask business questions using conversational AI.
+Workflow Automation Agent
+Automates repetitive business processes across departments.
+Document Intelligence Agent
+Extracts and validates information from invoices, purchase orders, and contracts.
+Approval Workflow Agent
+Routes approvals based on organizational policies.
+AI Recommendation Agent
+Suggests business actions using predictive analytics.
+Copilot Productivity Agent
+Assists employees with content generation, summaries, and task automation.
+Cross-System Integration Agent
+Connects Microsoft Dynamics 365 with Microsoft 365, Power Platform, Power BI, Microsoft Fabric, Azure AI, and third-party applications.
+ 
+Insurance
+Policy Management Agent
+Automates policy issuance, renewals, and endorsements.
+Claims Processing Agent
+Accelerates claim registration, validation, and settlement.
+Underwriting Assistant
+Supports risk evaluation and policy recommendations.
+Customer Service Agent
+Provides policyholders with real-time assistance.
+Fraud Detection Agent
+Identifies suspicious claims using AI.
+Premium Collection Agent
+Automates premium billing and payment tracking.
+Regulatory Compliance Agent
+Monitors insurance compliance requirements.
+Insurance Analytics Agent
+Generates business performance and risk insights.
+ 
+Manufacturing
+Production Planning Agent
+Optimizes production schedules based on demand.
+Shop Floor Monitoring Agent
+Provides real-time production visibility.
+Quality Control Agent
+Detects quality deviations during manufacturing.
+Predictive Maintenance Agent
+Predicts equipment failures before breakdowns occur.
+Bill of Materials Agent
+Manages product structures and engineering changes.
+Production Cost Analysis Agent
+Monitors manufacturing costs and profitability.
+Capacity Planning Agent
+Optimizes production resource utilization.
+Manufacturing Analytics Agent
+Provides operational insights and production KPIs.
+ 
+Retail & CPG
+Demand Forecasting Agent
+Predicts consumer demand across stores and channels.
+Inventory Replenishment Agent
+Automates replenishment for retail locations.
+Pricing Optimization Agent
+Recommends pricing strategies based on demand.
+Promotion Management Agent
+Tracks promotional campaigns and sales performance.
+Customer Loyalty Agent
+Analyzes customer purchasing behavior.
+Store Operations Agent
+Monitors retail store performance.
+Order Fulfilment Agent
+Coordinates omnichannel fulfilment.
+Retail Analytics Agent
+Provides sales and inventory insights.
+ 
+Healthcare & Life Sciences
+Patient Scheduling Agent
+Optimizes appointment scheduling.
+Clinical Documentation Agent
+Generates and summarizes clinical records.
+Medical Inventory Agent
+Tracks medical supplies and pharmaceuticals.
+Regulatory Compliance Agent
+Supports healthcare compliance and reporting.
+Laboratory Workflow Agent
+Coordinates diagnostic workflows.
+Asset Management Agent
+Monitors medical equipment utilization.
+Procurement Agent
+Automates medical procurement.
+Healthcare Analytics Agent
+Provides operational and patient-care insights.
+ 
+Trade Finance & Logistics
+Letter of Credit Agent
+Automates LC processing and document validation.
+Export Documentation Agent
+Generates customs and export documents.
+Customs Compliance Agent
+Ensures regulatory compliance for international trade.
+Freight Booking Agent
+Coordinates logistics providers and shipping schedules.
+Container Tracking Agent
+Provides real-time shipment tracking.
+Import Documentation Agent
+Validates import documentation.
+Freight Cost Optimization Agent
+Optimizes transportation costs.
+Trade Analytics Agent
+Provides visibility into international trade operations.
+ 
+BFSI
+Customer Onboarding Agent
+Automates KYC and customer verification.
+Loan Processing Agent
+Accelerates loan origination and approvals.
+Credit Risk Assessment Agent
+Evaluates borrower creditworthiness.
+Fraud Detection Agent
+Monitors suspicious financial activities.
+Payment Processing Agent
+Automates payment validation and reconciliation.
+Regulatory Reporting Agent
+Supports financial compliance reporting.
+Collections Management Agent
+Optimizes debt collection workflows.
+Financial Analytics Agent
+Provides executive banking insights.
+ 
+Microsoft Dynamics 365
+Dynamics 365 Sales Agent
+Automates lead management, quotations, and sales orders.
+Dynamics 365 Finance Agent
+Manages accounting, financial reporting, and budgeting.
+Dynamics 365 Supply Chain Agent
+Optimizes procurement, inventory, manufacturing, and logistics.
+Dynamics 365 Customer Service Agent
+Automates case management and customer support.
+Dynamics 365 Field Service Agent
+Optimizes work orders, scheduling, and technician dispatch.
+Dynamics 365 Project Operations Agent
+Manages projects, resources, and billing.
+Dynamics 365 Business Central Agent
+Supports finance, sales, purchasing, warehouse, and operations for SMBs.
+Microsoft Copilot Agent
+Enhances productivity with AI-powered assistance across Microsoft Dynamics 365, Microsoft 365, Power Platform, and Microsoft Fabric.
+ 
+ 
+ 
+ 
+In the Footer make the following changes - 
+ 
+Replace mywave.ai KDS ERP Crew
+And the footer content with the follwing
+Enterprise AI agents built for Microsoft Dynamics 365 to automate business processes, orchestrate cross-functional workflows, and deliver intelligent, policy-driven enterprise operations.
+www.kdserpcrew.ai (or replace with your website URL, e.g., erpcrew.keydynamicssolutions.com)
+AI Agents
+150+
+Across 11 Business Process Categories
+© 2026 Key Dynamics Solutions. All rights reserved.
+Microsoft Dynamics 365 | Power Platform | Azure AI Ready
+ 
+ 
+ 
+ 
