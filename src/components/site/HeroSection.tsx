@@ -1,4 +1,4 @@
-import heroWave from "@/assets/hero-wave.jpg";
+import heroWave from "@/assets/hero-banner.png";
 import { Logo } from "./Logo";
 import { CheckCircle2, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
 import { toast } from "sonner";
