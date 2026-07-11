@@ -50,18 +50,16 @@ export function HeroSection() {
               <BookOpen className="h-4 w-4" />
               Complete AI Agent Catalogue
             </button>
-            <button
-              onClick={() =>
-                toast("External link disabled in this preview", {
-                  description: "Would navigate to Key Dynamic Solutions",
-                })
-              }
+            <a
+              href="https://keydynamicssolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
               style={{ backgroundColor: "#fba226" }}
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Key Dynamic Solutions
-            </button>
+            </a>
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 md:grid-cols-4 md:gap-4">
