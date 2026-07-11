@@ -1,0 +1,94 @@
+import heroWave from "@/assets/hero-wave.jpg";
+import { Logo } from "./Logo";
+import { CheckCircle2, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
+import { toast } from "sonner";
+
+function scrollTo(id: string) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+export function HeroSection() {
+  return (
+    <section className="relative overflow-hidden bg-hero text-hero-foreground">
+      <img
+        src={heroWave}
+        alt=""
+        width={1920}
+        height={1080}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-hero/50 via-hero/40 to-hero" />
+
+      <div className="relative mx-auto max-w-screen-2xl px-6 pb-16 pt-10 md:px-10 md:pb-24 md:pt-14">
+        <Logo className="text-hero-foreground" />
+
+        <div className="mt-14 max-w-2xl md:mt-20">
+          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl">
+            AI Agent Catalogue
+          </h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-hero-muted md:text-lg">
+            A library of enterprise AI agents designed to automate, orchestrate,
+            and govern complex business processes. Each agent is built for
+            configuration and deployment in partnership with your team.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => scrollTo("highlights")}
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground shadow-lg shadow-brand/20 transition hover:brightness-110"
+            >
+              <Sparkles className="h-4 w-4" />
+              Agent Highlights
+            </button>
+            <button
+              onClick={() => scrollTo("catalogue")}
+              className="inline-flex items-center gap-2 rounded-full border border-hero-tile-border bg-hero-tile px-5 py-2.5 text-sm font-medium text-hero-foreground backdrop-blur transition hover:bg-white/10"
+            >
+              <BookOpen className="h-4 w-4" />
+              Full Agent Catalogue
+            </button>
+            <button
+              onClick={() =>
+                toast("External link disabled in this clone", {
+                  description: "Would navigate to mywave.ai",
+                })
+              }
+              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-hero transition hover:bg-white/90"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to MyWave.ai
+            </button>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 md:grid-cols-4 md:gap-4">
+            <StatTile value="352+" label="Total Agents" />
+            <StatTile value="7" label="Business Functions" />
+            <StatTile value="10+" label="Industries Covered" />
+            <StatTile
+              value={<CheckCircle2 className="h-6 w-6 text-brand" />}
+              label="SAP Certified"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StatTile({
+  value,
+  label,
+}: {
+  value: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <div className="rounded-xl border border-hero-tile-border bg-hero-tile p-4 backdrop-blur">
+      <div className="flex h-8 items-center text-2xl font-bold md:text-3xl">
+        {value}
+      </div>
+      <div className="mt-2 text-xs text-hero-muted md:text-sm">{label}</div>
+    </div>
+  );
+}
