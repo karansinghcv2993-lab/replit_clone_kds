@@ -56,7 +56,8 @@ export function HeroSection() {
                   description: "Would navigate to Key Dynamic Solutions",
                 })
               }
-              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-hero transition hover:bg-white/90"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+              style={{ backgroundColor: "#fba226" }}
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Key Dynamic Solutions
