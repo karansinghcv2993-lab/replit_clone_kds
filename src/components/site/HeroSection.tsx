@@ -23,11 +23,11 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-screen-2xl px-6 pb-16 pt-10 md:px-10 md:pb-24 md:pt-14">
         <Logo className="text-hero-foreground" />
 
-        <div className="mt-14 max-w-2xl md:mt-20">
+        <div className="mt-14 max-w-5xl md:mt-20">
           <h1 className="text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl">
             Enterprise AI Agent Catalogue
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-hero-muted md:text-lg">
+          <p className="mt-5 max-w-4xl text-base leading-relaxed text-hero-muted md:text-lg">
             A comprehensive library of enterprise AI agents built to automate,
             orchestrate, and optimize business processes across Microsoft
             Dynamics 365. Every AI agent is designed for seamless integration,
