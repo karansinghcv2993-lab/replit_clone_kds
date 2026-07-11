@@ -25,7 +25,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="flex flex-col items-start gap-2 text-sm md:items-end">
+          <div className="flex flex-col items-start gap-2 text-sm md:items-end md:self-end">
             <button
               onClick={() =>
                 toast("External link disabled in this preview", {
