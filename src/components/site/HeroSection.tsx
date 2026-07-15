@@ -1,4 +1,4 @@
-import heroWave from "@/assets/hero-banner-2.png";
+import heroWave from "@/assets/hero-banner-3.png";
 import { Logo } from "./Logo";
 import { CheckCircle2, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
 
@@ -53,7 +53,8 @@ export function HeroSection() {
             </button>
             <button
               onClick={() => scrollTo("catalogue")}
-              className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 px-5 py-2.5 text-sm font-medium text-gray-800 backdrop-blur transition hover:bg-white"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+              style={{ backgroundColor: "#051895" }}
             >
               <BookOpen className="h-4 w-4" />
               Complete AI Agent Catalogue
