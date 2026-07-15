@@ -35,7 +35,7 @@ export function HeroSection() {
                 "Enable Seamless Integration with Your Existing Business Systems",
                 "Deploy Tailored AI Agents Built for Your Unique Business Needs",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2 text-base leading-relaxed text-black md:text-lg">
+                <li key={item} className="flex items-start gap-2 text-base leading-relaxed text-muted-foreground">
                   <span className="mt-0.5 font-bold text-gray-400">➜</span>
                   <span>{item}</span>
                 </li>
