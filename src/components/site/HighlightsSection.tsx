@@ -1,4 +1,3 @@
-import highlightsBg from "@/assets/highlights-bg.png";
 import { useMemo, useState } from "react";
 import { AGENTS, type Agent, type AgentCategory } from "@/data/catalogue";
 import { Sparkles, PlayCircle, ArrowRight, CheckCircle2 } from "lucide-react";
@@ -33,17 +32,13 @@ export function HighlightsSection() {
   const items = featured.filter((a) => tab.cats.includes(a.cat));
 
   return (
-    <section
-      id="highlights"
-      className="relative border-b border-border px-6 py-16 md:px-10 md:py-20"
-      style={{ backgroundImage: `url(${highlightsBg})`, backgroundSize: "cover", backgroundPosition: "top center" }}
-    >
+    <section id="highlights" className="border-b border-border bg-white px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-screen-2xl">
         <div className="mb-2 inline-flex items-center gap-2 rounded-md bg-brand px-2 py-1 text-xs font-semibold uppercase tracking-widest text-brand-foreground">
           <Sparkles className="h-3.5 w-3.5" />
           Agent Highlights
         </div>
-        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+        <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl" style={{ color: "#051895" }}>
           Experience AI Agents in Action
         </h2>
         <p className="mt-3 max-w-full text-base leading-relaxed text-muted-foreground">
