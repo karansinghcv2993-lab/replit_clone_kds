@@ -3,7 +3,6 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { HeroSection } from "@/components/site/HeroSection";
 import { HighlightsSection } from "@/components/site/HighlightsSection";
 import { SolutionsSection } from "@/components/site/SolutionsSection";
-import { CatalogueSection } from "@/components/site/CatalogueSection";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -34,7 +33,6 @@ function Home() {
       <HeroSection />
       <HighlightsSection />
       <SolutionsSection />
-      <CatalogueSection />
       <SiteFooter />
       <Toaster position="bottom-right" />
     </div>
