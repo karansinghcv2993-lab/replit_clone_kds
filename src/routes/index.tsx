@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/site/SiteHeader";
 import { HeroSection } from "@/components/site/HeroSection";
 import { HighlightsSection } from "@/components/site/HighlightsSection";
 import { SolutionsSection } from "@/components/site/SolutionsSection";
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SiteHeader />
       <HeroSection />
       <HighlightsSection />
       <SolutionsSection />
