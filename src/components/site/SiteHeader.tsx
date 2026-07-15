@@ -1,9 +1,5 @@
 import kdsLogoHeader from "@/assets/kds-logo-header.png";
-
-function scrollTo(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+import { Link } from "@tanstack/react-router";
 
 export function SiteHeader() {
   return (
@@ -17,12 +13,12 @@ export function SiteHeader() {
         {/* Nav + CTA grouped on the right */}
         <div className="hidden items-center gap-8 md:flex">
           <nav className="flex items-center gap-8">
-            <button
-              onClick={() => scrollTo("catalogue")}
+            <Link
+              to="/agent-library"
               className="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]"
             >
               Agent Library
-            </button>
+            </Link>
             <a
               href="https://keydynamicssolutions.com/"
               target="_blank"
