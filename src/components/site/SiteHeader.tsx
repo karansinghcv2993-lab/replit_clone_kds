@@ -1,4 +1,4 @@
-import { Logo } from "./Logo";
+import kdsLogoHeader from "@/assets/kds-logo-header.png";
 
 function scrollTo(id: string) {
   const el = document.getElementById(id);
@@ -11,7 +11,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-3 md:px-10">
         {/* Logo */}
         <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer">
-          <Logo />
+          <img src={kdsLogoHeader} alt="KDS ERP Crew" className="h-[3.75rem] object-contain" />
         </a>
 
         {/* Nav + CTA grouped on the right */}
