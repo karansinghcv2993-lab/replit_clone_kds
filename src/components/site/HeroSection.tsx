@@ -1,4 +1,4 @@
-import heroWave from "@/assets/hero-banner.png";
+import heroWave from "@/assets/hero-banner-2.png";
 import { Logo } from "./Logo";
 import { CheckCircle2, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
 import { toast } from "sonner";
@@ -27,13 +27,25 @@ export function HeroSection() {
           <h1 className="text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl">
             Enterprise AI Agent Catalogue
           </h1>
-          <p className="mt-5 max-w-4xl text-base leading-relaxed text-hero-muted md:text-lg">
-            A comprehensive library of enterprise AI agents built to automate,
-            orchestrate, and optimize business processes across Microsoft
-            Dynamics 365. Every AI agent is designed for seamless integration,
-            intelligent automation, and tailored deployment to meet your
-            organization's unique business needs.
-          </p>
+          <div className="mt-5 max-w-4xl">
+            <p className="text-lg font-semibold text-hero-foreground md:text-xl">
+              AI Agents for Modern Enterprises
+            </p>
+            <ul className="mt-3 space-y-2">
+              {[
+                "Automate Business Processes with Intelligent AI Agents",
+                "Streamline Operations Across Microsoft Dynamics 365",
+                "Optimize Workflows with Enterprise-Grade AI Automation",
+                "Enable Seamless Integration with Your Existing Business Systems",
+                "Deploy Tailored AI Agents Built for Your Unique Business Needs",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2 text-base leading-relaxed text-hero-muted md:text-lg">
+                  <span className="mt-0.5 text-gray-400 font-bold">➜</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <button
