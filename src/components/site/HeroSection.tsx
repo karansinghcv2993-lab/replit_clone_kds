@@ -19,8 +19,6 @@ export function HeroSection() {
       />
 
       <div className="relative mx-auto max-w-screen-2xl px-6 pb-16 pt-10 md:px-10 md:pb-24 md:pt-14">
-        <Logo />
-
         <div className="mt-14 max-w-5xl md:mt-20">
           <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-black md:text-6xl">
             Enterprise AI Agent Catalogue
