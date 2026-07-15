@@ -20,7 +20,7 @@ export function HeroSection() {
 
       <div className="relative mx-auto max-w-screen-2xl px-6 pb-16 pt-10 md:px-10 md:pb-24 md:pt-14">
         <div className="mt-14 max-w-5xl md:mt-20">
-          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-black md:text-6xl">
+          <h1 className="font-bold leading-[1.05] tracking-tight text-[2.55rem] md:text-[3.1875rem]" style={{ color: "#051895" }}>
             Enterprise AI Agent Catalogue
           </h1>
           <div className="mt-5 max-w-4xl">
