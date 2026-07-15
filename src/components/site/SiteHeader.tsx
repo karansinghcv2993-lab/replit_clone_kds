@@ -1,5 +1,4 @@
 import { Logo } from "./Logo";
-import { toast } from "sonner";
 
 function scrollTo(id: string) {
   const el = document.getElementById(id);
@@ -15,34 +14,35 @@ export function SiteHeader() {
           <Logo />
         </a>
 
-        {/* Nav links */}
-        <nav className="hidden items-center gap-8 md:flex">
-          <button
-            onClick={() => scrollTo("catalogue")}
-            className="text-sm font-medium text-gray-700 transition hover:text-[#051895]"
-          >
-            Agent Library
-          </button>
+        {/* Nav + CTA grouped on the right */}
+        <div className="hidden items-center gap-8 md:flex">
+          <nav className="flex items-center gap-8">
+            <button
+              onClick={() => scrollTo("catalogue")}
+              className="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]"
+            >
+              Agent Library
+            </button>
+            <a
+              href="https://keydynamicssolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]"
+            >
+              About Us
+            </a>
+          </nav>
+
           <a
             href="https://keydynamicssolutions.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-700 transition hover:text-[#051895]"
+            className="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+            style={{ backgroundColor: "#051895" }}
           >
-            About Us
+            Request a Quote
           </a>
-        </nav>
-
-        {/* CTA */}
-        <a
-          href="https://keydynamicssolutions.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
-          style={{ backgroundColor: "#051895" }}
-        >
-          Request a Quote
-        </a>
+        </div>
       </div>
     </header>
   );
