@@ -36,7 +36,7 @@ const SLIDES: Slide[] = [
       { value: "21+", label: "Business Functions" },
       { value: "10+", label: "Enterprise Workflows" },
       {
-        value: <CheckCircle2 className="h-6 w-6 text-brand" />,
+        value: <CheckCircle2 className="h-6 w-6 text-white" />,
         label: "End-to-End Transaction Management",
       },
     ],
@@ -51,7 +51,7 @@ const SLIDES: Slide[] = [
       { value: "21+", label: "Business Functions" },
       { value: "10+", label: "Analytics Modules" },
       {
-        value: <CheckCircle2 className="h-6 w-6 text-brand" />,
+        value: <CheckCircle2 className="h-6 w-6 text-white" />,
         label: "Always-On Decision Intelligence",
       },
     ],
@@ -65,11 +65,11 @@ const SLIDES: Slide[] = [
       { value: "100+", label: "Approval Scenarios" },
       { value: "21+", label: "Business Functions" },
       {
-        value: <CheckCircle2 className="h-6 w-6 text-brand" />,
+        value: <CheckCircle2 className="h-6 w-6 text-white" />,
         label: "Real-Time Workflow Visibility",
       },
       {
-        value: <CheckCircle2 className="h-6 w-6 text-brand" />,
+        value: <CheckCircle2 className="h-6 w-6 text-white" />,
         label: "Always-On AI Approval Assistant",
       },
     ],
@@ -90,14 +90,14 @@ function scrollTo(id: string) {
 function StatTile({ value, label, visible }: { value: React.ReactNode; label: string; visible: boolean }) {
   return (
     <div
-      className="rounded-xl border border-gray-200 bg-white/70 p-4 backdrop-blur transition-all duration-500"
+      className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur transition-all duration-500"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(12px)",
       }}
     >
-      <div className="flex h-8 items-center text-2xl font-bold text-gray-900 md:text-3xl">{value}</div>
-      <div className="mt-2 text-xs text-gray-600 md:text-sm">{label}</div>
+      <div className="flex h-8 items-center text-2xl font-bold text-white md:text-3xl">{value}</div>
+      <div className="mt-2 text-xs text-white/80 md:text-sm">{label}</div>
     </div>
   );
 }
@@ -188,14 +188,11 @@ export function HeroCarousel() {
         </div>
       ))}
 
-      {/* ── Left-side gradient overlay for text readability ── */}
+      {/* ── Dark overlay for text readability ── */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 z-[2]"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0) 80%)",
-        }}
+        style={{ background: "rgba(3,14,89,0.68)" }}
       />
 
       {/* ── Content ── */}
@@ -211,13 +208,12 @@ export function HeroCarousel() {
             }}
           >
             <h1
-              className="font-bold leading-[1.05] tracking-tight text-[2.55rem] md:text-[3.1875rem]"
-              style={{ color: "#051895" }}
+              className="font-bold leading-[1.05] tracking-tight text-[2.55rem] md:text-[3.1875rem] text-white"
             >
               {slide.heading}
             </h1>
             <div className="mt-5 max-w-4xl">
-              <p className="text-base leading-relaxed text-gray-700 md:text-lg">
+              <p className="text-base leading-relaxed text-white/90 md:text-lg">
                 {slide.description}
               </p>
             </div>
