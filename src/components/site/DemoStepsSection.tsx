@@ -67,7 +67,7 @@ const TRANSITIONS = STEPS.length - 1; // 3
 
 function StepCard({ step }: { step: Step }) {
   return (
-    <div className="flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white shadow-2xl md:flex-row">
+    <div className="flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white md:flex-row">
 
       {/* ── Left panel — step illustration image ── */}
       {/*
@@ -291,10 +291,13 @@ export function DemoStepsSection() {
             fill the full remaining viewport height.
             min() keeps it within the viewport on shorter screens.
           */}
+          {/* Shadow wrapper sits outside the clip so it isn't cut off */}
           <div
-            className="relative w-full max-w-4xl overflow-hidden"
+            className="relative w-full max-w-4xl rounded-3xl shadow-2xl"
             style={{ height: "min(400px, calc(100dvh - 250px))" }}
           >
+          {/* Clip wrapper: rounded-3xl matches the card corners so they aren't squared off */}
+          <div className="absolute inset-0 overflow-hidden rounded-3xl">
             {STEPS.map((step, i) => (
               <div
                 key={i}
@@ -304,6 +307,7 @@ export function DemoStepsSection() {
                 <StepCard step={step} />
               </div>
             ))}
+          </div>
           </div>
         </div>
       </div>
