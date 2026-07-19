@@ -188,7 +188,7 @@ export function HeroCarousel() {
     // backgrounds without creating a scroll container, which could otherwise
     // confine position:sticky to this element as its scroll ancestor.
     <section
-      className="relative overflow-clip"
+      className="relative overflow-clip flex flex-col"
       style={{ minHeight: "calc(100svh - var(--header-h, 5.375rem))" }}
     >
       {/* ── Background layers (crossfade) ── */}
@@ -226,8 +226,8 @@ export function HeroCarousel() {
       />
 
       {/* ── Content ── */}
-      <div className="relative z-10 mx-auto max-w-screen-2xl px-6 pb-16 pt-10 md:px-10 md:pb-24 md:pt-14">
-        <div className="mt-14 max-w-5xl md:mt-20">
+      <div className="relative z-10 mx-auto flex w-full max-w-screen-2xl flex-1 flex-col px-6 pt-10 md:px-10 md:pt-14">
+        <div className="mt-14 flex flex-1 flex-col max-w-5xl md:mt-20">
 
           {/* Heading + description */}
           <div
@@ -242,7 +242,7 @@ export function HeroCarousel() {
             >
               {slide.heading}
             </h1>
-            <div className="mt-5 max-w-4xl">
+            <div className="mt-5 max-w-2xl">
               <p className="text-base leading-relaxed text-white/90 md:text-lg">
                 {slide.description}
               </p>
@@ -250,7 +250,7 @@ export function HeroCarousel() {
           </div>
 
           {/* CTA buttons — always visible, don't animate per-slide */}
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <button
               onClick={() => scrollTo("highlights")}
               className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground shadow-lg shadow-brand/20 transition hover:brightness-110"
@@ -279,7 +279,7 @@ export function HeroCarousel() {
           </div>
 
           {/* Stats grid */}
-          <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 md:grid-cols-4 md:gap-4">
+          <div className="mt-auto grid grid-cols-2 gap-3 pb-10 pt-8 md:grid-cols-4 md:gap-4">
             {slide.stats.map((stat, i) => (
               <StatTile
                 key={`${current}-${i}`}
