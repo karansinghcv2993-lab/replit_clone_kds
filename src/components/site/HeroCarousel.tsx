@@ -5,7 +5,7 @@
  * Transitions: crossfade background + slide-up text, 5 s autoplay, infinite loop.
  */
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight, CheckCircle2, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
 import slide1Bg from "@/assets/hero-slide-1.jpg";
 import slide2Bg from "@/assets/hero-slide-2.jpg";
@@ -157,10 +157,40 @@ export function HeroCarousel() {
     timerRef.current = setInterval(next, AUTOPLAY_MS);
   };
 
+  // ── Dynamically measure the sticky header's rendered height ─────────────────
+  // Sets --header-h on :root so the section min-height adapts to any header
+  // size change (responsive resizing, future layout changes, etc.) without
+  // any hardcoded pixel value.
+  useLayoutEffect(() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const apply = (h: number) =>
+      document.documentElement.style.setProperty("--header-h", `${h}px`);
+
+    // Set immediately so the first paint is correct
+    apply(header.getBoundingClientRect().height);
+
+    const ro = new ResizeObserver(([entry]) => {
+      const h =
+        entry.borderBoxSize?.[0]?.blockSize ??
+        entry.contentRect.height;
+      apply(h);
+    });
+    ro.observe(header);
+    return () => ro.disconnect();
+  }, []);
+
   const slide = SLIDES[current];
 
   return (
-    <section className="relative overflow-hidden">
+    // overflow-clip (not overflow-hidden) — clips absolutely-positioned
+    // backgrounds without creating a scroll container, which could otherwise
+    // confine position:sticky to this element as its scroll ancestor.
+    <section
+      className="relative overflow-clip"
+      style={{ minHeight: "calc(100svh - var(--header-h, 5.375rem))" }}
+    >
       {/* ── Background layers (crossfade) ── */}
       {SLIDES.map((s, i) => (
         <div
@@ -179,7 +209,7 @@ export function HeroCarousel() {
             height={960}
             loading={i === 0 ? "eager" : "lazy"}
             decoding="async"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
             style={{
               transform: i === current ? "scale(1.03)" : "scale(1)",
               transition: "transform 6s ease-out, opacity 0.7s ease",
