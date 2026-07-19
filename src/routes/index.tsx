@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { HeroSection } from "@/components/site/HeroSection";
 import { HighlightsSection } from "@/components/site/HighlightsSection";
+import { AICoWorkerSection } from "@/components/site/AICoWorkerSection";
 import { SolutionsSection } from "@/components/site/SolutionsSection";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
@@ -32,6 +33,7 @@ function Home() {
       <SiteHeader />
       <HeroSection />
       <HighlightsSection />
+      <AICoWorkerSection />
       <SolutionsSection />
       <SiteFooter />
       <Toaster position="bottom-right" />

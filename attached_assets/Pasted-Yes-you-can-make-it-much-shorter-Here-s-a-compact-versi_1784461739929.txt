@@ -1,0 +1,51 @@
+Yes, you can make it much shorter. Here's a compact version that still conveys all the important requirements.
+
+---
+
+**Prompt for Replit**
+
+Create a new full-width landing section inspired by the attached reference image. Use **`background_image.png`** as the background and match the overall layout, typography, spacing, and premium SaaS aesthetic of the reference. Do **not** copy it exactly—adapt it to the existing KDS branding.
+
+### Left Content
+
+**Eyebrow**
+
+> Enterprise AI for Modern ERP
+
+**Heading**
+
+> Your AI Co-Worker for Every Business Process
+
+**Description**
+
+> From decision intelligence and transaction management to approval orchestration and workflow automation, KDS ERP Crew empowers teams to work faster, reduce manual effort, and maximize ERP value.
+
+**Buttons**
+
+* Explore ERP Crew (Primary)
+* Why KDS (Secondary) → [https://keydynamicssolutions.com/](https://keydynamicssolutions.com/)
+
+### Right Content
+
+Display the following features as an animated **vertical looping feature navigator**:
+
+* Role-Based AI Digital Crew
+* Intelligent Transaction Automation
+* Multi-Channel ERP Access
+* Real-Time Transaction Monitoring
+* Pre-Built AI Crew Templates
+* Business Rule Validation
+* Centralized Crew Management
+* Multi-ERP Integration
+
+Only the **center 5 items** should be visible. Every few seconds, the list should smoothly scroll upward by one item in an infinite loop. The active center item must be highlighted with an animated arrow, brighter styling, and higher emphasis, while surrounding items gradually fade based on their distance from the center.
+
+### Requirements
+
+* Use `background_image.png` for the section background with a subtle overlay if needed.
+* Maintain the existing site branding, navigation, and color palette.
+* Use smooth, performant animations.
+* Make the section fully responsive across desktop, tablet, and mobile.
+* Keep the feature list data-driven (single array/object), not hardcoded.
+
+Before implementing, briefly explain the approach and list the files that will be modified.
