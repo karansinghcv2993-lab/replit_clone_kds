@@ -284,13 +284,17 @@ export function DemoStepsSection() {
         </div>
 
         {/* ── Card stack ── */}
-        <div className="relative flex-1 overflow-clip px-4 pb-6 md:px-10 md:pb-10">
+        <div className="relative flex flex-1 items-center justify-center overflow-clip px-4 pb-6 md:px-10 md:pb-8">
           {/*
-            Relative container fills remaining height.
-            Each card is absolutely inset-0 inside it; cards slide up from
-            translateY(110%) to translateY(0) as scroll progresses.
+            Card container height is capped so the card matches the natural
+            proportions of the square step images rather than stretching to
+            fill the full remaining viewport height.
+            min() keeps it within the viewport on shorter screens.
           */}
-          <div className="relative mx-auto h-full max-w-4xl">
+          <div
+            className="relative w-full max-w-4xl"
+            style={{ height: "min(400px, calc(100dvh - 250px))" }}
+          >
             {STEPS.map((step, i) => (
               <div
                 key={i}
