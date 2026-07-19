@@ -107,11 +107,17 @@ function useCountUp(target: number, active: boolean, duration = 1200): number {
 
   useEffect(() => {
     if (!active) {
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-      setCount(0);
+      // Stop any running animation but keep the current displayed value so the
+      // outgoing slide always shows its final number throughout the exit fade.
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
       return;
     }
 
+    // Incoming slide: reset to 0 first, then count up to target.
+    setCount(0);
     startRef.current = null;
 
     const tick = (timestamp: number) => {
