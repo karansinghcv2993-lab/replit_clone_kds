@@ -292,7 +292,7 @@ export function DemoStepsSection() {
             min() keeps it within the viewport on shorter screens.
           */}
           <div
-            className="relative w-full max-w-4xl"
+            className="relative w-full max-w-4xl overflow-hidden"
             style={{ height: "min(400px, calc(100dvh - 250px))" }}
           >
             {STEPS.map((step, i) => (
