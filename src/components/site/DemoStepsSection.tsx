@@ -14,6 +14,10 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import step1Img from "@/assets/demo-step-1.png";
+import step2Img from "@/assets/demo-step-2.png";
+import step3Img from "@/assets/demo-step-3.png";
+import step4Img from "@/assets/demo-step-4.png";
 
 // ─── Step data (source of truth: attached Word document) ──────────────────────
 
@@ -23,24 +27,32 @@ const STEPS = [
     title: "Share Your Requirements",
     description:
       "Tell us about your business, ERP environment, and the processes you want to automate.",
+    image: step1Img,
+    alt: "A form on screen for entering personal information — step 1 of the KDS ERP Crew demo booking",
   },
   {
     number: 2,
     title: "Schedule Your Demo",
     description:
       "Choose a convenient date and time for a personalized live demonstration with our ERP experts.",
+    image: step2Img,
+    alt: "KDS ERP Crew operations dashboard showing AI-powered analytics and metrics",
   },
   {
     number: 3,
     title: "Experience KDS ERP Crew",
     description:
       "See AI-powered agents automate transactions, approvals, reporting, and business workflows in real time.",
+    image: step3Img,
+    alt: "KDS ERP Crew live dashboard demonstrating real-time workflow automation",
   },
   {
     number: 4,
     title: "Launch Your AI Journey",
     description:
       "Receive a tailored implementation roadmap and discover how KDS ERP Crew can accelerate your enterprise transformation.",
+    image: step4Img,
+    alt: "KDS ERP Crew logo on screen — ready to launch your enterprise AI journey",
   },
 ] as const;
 
@@ -51,107 +63,35 @@ const HOLD = 0.25;
 // Number of slide-in transitions (all cards except the first)
 const TRANSITIONS = STEPS.length - 1; // 3
 
-// ─── ERP / AI Network Illustration (consistent across all cards) ──────────────
-
-function ERPIllustration() {
-  const orbitAngles = [0, 60, 120, 180, 240, 300];
-  return (
-    <svg
-      viewBox="0 0 360 280"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-full max-w-[17rem]"
-      aria-hidden
-    >
-      {/* ── Dashed connection lines from center to outer nodes ── */}
-      <line x1="180" y1="140" x2="88"  y2="68"  stroke="rgba(42,186,190,0.4)" strokeWidth="1.5" strokeDasharray="5 4" />
-      <line x1="180" y1="140" x2="272" y2="68"  stroke="rgba(42,186,190,0.4)" strokeWidth="1.5" strokeDasharray="5 4" />
-      <line x1="180" y1="140" x2="76"  y2="216" stroke="rgba(42,186,190,0.4)" strokeWidth="1.5" strokeDasharray="5 4" />
-      <line x1="180" y1="140" x2="284" y2="216" stroke="rgba(42,186,190,0.4)" strokeWidth="1.5" strokeDasharray="5 4" />
-
-      {/* ── Node: Transactions (top-left) ── */}
-      <circle cx="88" cy="68" r="29" fill="rgba(42,186,190,0.1)" stroke="rgba(42,186,190,0.55)" strokeWidth="1.5" />
-      <rect x="79" y="57" width="12" height="16" rx="2" fill="none" stroke="#2ababe" strokeWidth="1.5" />
-      <path d="M79 62h12M79 66h12M79 70h7" stroke="#2ababe" strokeWidth="1.2" strokeLinecap="round" />
-      <text x="88" y="104" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="7.5" fontFamily="sans-serif">Transactions</text>
-
-      {/* ── Node: Approvals (top-right) ── */}
-      <circle cx="272" cy="68" r="29" fill="rgba(42,186,190,0.1)" stroke="rgba(42,186,190,0.55)" strokeWidth="1.5" />
-      <circle cx="272" cy="68" r="11" fill="none" stroke="#2ababe" strokeWidth="1.5" />
-      <polyline points="266,68 270,72 279,62" fill="none" stroke="#2ababe" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <text x="272" y="104" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="7.5" fontFamily="sans-serif">Approvals</text>
-
-      {/* ── Node: Analytics (bottom-left) ── */}
-      <circle cx="76" cy="216" r="29" fill="rgba(42,186,190,0.1)" stroke="rgba(42,186,190,0.55)" strokeWidth="1.5" />
-      <rect x="66" y="215" width="4" height="9"  rx="1" fill="#2ababe" />
-      <rect x="72" y="209" width="4" height="15" rx="1" fill="#2ababe" />
-      <rect x="78" y="212" width="4" height="12" rx="1" fill="#2ababe" />
-      <text x="76" y="252" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="7.5" fontFamily="sans-serif">Analytics</text>
-
-      {/* ── Node: Workflows (bottom-right) ── */}
-      <circle cx="284" cy="216" r="29" fill="rgba(42,186,190,0.1)" stroke="rgba(42,186,190,0.55)" strokeWidth="1.5" />
-      <circle cx="278" cy="210" r="4" fill="none" stroke="#2ababe" strokeWidth="1.4" />
-      <circle cx="290" cy="210" r="4" fill="none" stroke="#2ababe" strokeWidth="1.4" />
-      <circle cx="284" cy="221" r="4" fill="none" stroke="#2ababe" strokeWidth="1.4" />
-      <line x1="280" y1="213" x2="285" y2="217" stroke="#2ababe" strokeWidth="1.2" />
-      <line x1="289" y1="213" x2="284" y2="217" stroke="#2ababe" strokeWidth="1.2" />
-      <text x="284" y="252" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="7.5" fontFamily="sans-serif">Workflows</text>
-
-      {/* ── Central AI agent node ── */}
-      {/* Outer pulse ring */}
-      <circle cx="180" cy="140" r="54" fill="none" stroke="rgba(42,186,190,0.13)" strokeWidth="1.5" />
-      {/* Rim */}
-      <circle cx="180" cy="140" r="47" fill="rgba(5,24,149,0.55)" stroke="rgba(42,186,190,0.7)" strokeWidth="2" />
-      {/* Fill */}
-      <circle cx="180" cy="140" r="39" fill="#051895" />
-      {/* Label */}
-      <text x="180" y="135" textAnchor="middle" fill="#2ababe" fontSize="22" fontWeight="bold" fontFamily="sans-serif">AI</text>
-      <text x="180" y="151" textAnchor="middle" fill="rgba(42,186,190,0.65)" fontSize="7" fontFamily="sans-serif" letterSpacing="1.5">ERP CREW</text>
-      {/* Circuit dots on rim */}
-      {orbitAngles.map((deg, idx) => {
-        const rad = (deg * Math.PI) / 180;
-        return (
-          <circle
-            key={idx}
-            cx={180 + Math.cos(rad) * 47}
-            cy={140 + Math.sin(rad) * 47}
-            r="2.5"
-            fill="rgba(42,186,190,0.55)"
-          />
-        );
-      })}
-    </svg>
-  );
-}
-
 // ─── Individual step card ─────────────────────────────────────────────────────
 
 function StepCard({ step }: { step: Step }) {
   return (
     <div className="flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white shadow-2xl md:flex-row">
 
-      {/* Left panel — ERP illustration on dark brand gradient */}
-      {/* Mobile: full width, fixed 11rem tall. Desktop: 42% wide, stretches to full card height */}
+      {/* ── Left panel — step illustration image ── */}
+      {/*
+        Mobile : full width, 52vw tall (shows the monitor comfortably).
+        Desktop: 46% wide, full card height; image is object-contain so the
+                 whole monitor mockup is always visible.
+        Background matches the warm cream tone of the step images.
+      */}
       <div
-        className="relative flex h-44 flex-shrink-0 items-center justify-center overflow-hidden md:h-auto md:w-[42%]"
-        style={{
-          background: "linear-gradient(140deg, #010923 0%, #030e59 45%, #051895 80%)",
-        }}
+        className="relative flex h-[52vw] max-h-[340px] min-h-[180px] flex-shrink-0 items-center justify-center overflow-hidden md:h-auto md:max-h-none md:min-h-0 md:w-[46%]"
+        style={{ backgroundColor: "#ede8e1" }}
       >
-        {/* Radial glow behind illustration */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(42,186,190,0.22) 0%, transparent 70%)",
-          }}
+        <img
+          src={step.image}
+          alt={step.alt}
+          className="h-full w-full object-contain"
+          draggable={false}
         />
-        <ERPIllustration />
       </div>
 
-      {/* Right panel — text content */}
-      <div className="flex flex-1 flex-col justify-center px-7 py-7 md:px-11 md:py-11"
-           style={{ minWidth: 0 }}
+      {/* ── Right panel — text content ── */}
+      <div
+        className="flex flex-1 flex-col justify-center px-7 py-7 md:px-10 md:py-10 lg:px-12 lg:py-12"
+        style={{ minWidth: 0 }}
       >
         {/* Step badge */}
         <span
@@ -165,14 +105,14 @@ function StepCard({ step }: { step: Step }) {
         <p
           aria-hidden
           className="mt-3 select-none font-black leading-none"
-          style={{ fontSize: "clamp(3.5rem,7vw,5.5rem)", color: "rgba(5,24,149,0.07)" }}
+          style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "rgba(5,24,149,0.07)" }}
         >
           {String(step.number).padStart(2, "0")}
         </p>
 
         {/* Title */}
         <h3
-          className="-mt-1 text-xl font-bold leading-snug md:text-2xl lg:text-3xl"
+          className="-mt-1 text-xl font-bold leading-snug md:text-2xl lg:text-[1.625rem]"
           style={{ color: "#051895" }}
         >
           {step.title}
@@ -212,12 +152,12 @@ export function DemoStepsSection() {
 
     const update = () => {
       const rect = el.getBoundingClientRect();
-      const scrolled = -rect.top;                           // px scrolled into section
-      const stickyRange = el.offsetHeight - window.innerHeight; // total sticky scroll distance
+      const scrolled = -rect.top;                                // px scrolled into section
+      const stickyRange = el.offsetHeight - window.innerHeight;  // total sticky scroll distance
       if (stickyRange <= 0) return;
 
       const raw = Math.max(0, Math.min(1, scrolled / stickyRange));
-      // First HOLD fraction = no animation; remaining 1-HOLD = 3 card transitions
+      // First HOLD fraction = no animation; remaining (1-HOLD) = 3 card transitions
       const p = raw < HOLD ? 0 : ((raw - HOLD) / (1 - HOLD)) * TRANSITIONS;
       setProgress(p);
     };
@@ -241,7 +181,7 @@ export function DemoStepsSection() {
    *   - Fully in (stacked) once progress ≥ i; subsequent cards push them behind.
    */
   const getCardStyle = (i: number): React.CSSProperties => {
-    const DEPTH_SCALE = 0.028; // scale reduction per depth level
+    const DEPTH_SCALE = 0.027; // scale reduction per depth level
     const DEPTH_SHIFT = -9;    // px translateY per depth level (peek-out effect)
 
     if (i === 0) {
@@ -303,7 +243,7 @@ export function DemoStepsSection() {
         style={{ backgroundColor: "#f7f8ff" }}
       >
         {/* ── Section header ── */}
-        <div className="flex-shrink-0 px-6 pb-4 pt-10 text-center md:pt-14">
+        <div className="flex-shrink-0 px-6 pb-4 pt-10 text-center md:pt-12">
           <p
             className="mb-2 text-xs font-semibold uppercase tracking-widest"
             style={{ color: "#2ababe" }}
@@ -346,9 +286,9 @@ export function DemoStepsSection() {
         {/* ── Card stack ── */}
         <div className="relative flex-1 overflow-clip px-4 pb-6 md:px-10 md:pb-10">
           {/*
-            The relative container fills remaining height.
-            Each card is absolutely inset-0 inside it.
-            Cards translate from translateY(110%) to translateY(0) as scroll progresses.
+            Relative container fills remaining height.
+            Each card is absolutely inset-0 inside it; cards slide up from
+            translateY(110%) to translateY(0) as scroll progresses.
           */}
           <div className="relative mx-auto h-full max-w-4xl">
             {STEPS.map((step, i) => (
