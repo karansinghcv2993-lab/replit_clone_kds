@@ -1,0 +1,88 @@
+From the screenshot, I can identify several issues that prevent the component from looking like the intended Magnific-style vertical navigator.
+
+### Issues
+
+1. **Active item is not vertically centered**
+
+   * The highlighted item ("Multi-Agent Collaboration") sits at the bottom of the viewport instead of the center.
+   * The center position should always be reserved for the active item.
+
+2. **Arrow is not aligned with the active item**
+
+   * The arrow is pointing to the first visible item instead of the highlighted item.
+   * The arrow should always be horizontally aligned with the active (center) item.
+
+3. **List is not scrolling around a fixed active position**
+
+   * The highlighted item appears to move through the viewport.
+   * Instead, the list should scroll while the active position remains fixed.
+
+4. **Insufficient visible items**
+
+   * Only three items are visible.
+   * The design should show **five visible rows** (or as specified), with the center row active.
+
+5. **No depth/focus effect**
+
+   * Items should gradually fade and optionally scale based on their distance from the center.
+   * Currently the opacity changes are inconsistent and don't create the desired focus.
+
+6. **Incorrect viewport height**
+
+   * The container is much taller than necessary, leaving excessive whitespace.
+   * It should only be tall enough to display the intended number of visible rows.
+
+7. **Uneven spacing**
+
+   * The vertical spacing between items is too large.
+   * Items should have a consistent row height so each animation step moves exactly one row.
+
+8. **Animation behavior**
+
+   * The animation should resemble a wheel picker or slot machine:
+
+     * list moves upward
+     * center position never moves
+     * arrow never moves
+     * active styling changes when a new item reaches the center.
+
+---
+
+## Replit Prompt
+
+The vertical feature navigator is still not behaving correctly. Please refactor it to behave like a **wheel picker / infinite vertical feature navigator**.
+
+### Required behavior
+
+* The **active position must always remain fixed at the vertical center** of the component.
+* The **arrow indicator must also remain fixed** beside this center position.
+* The list should scroll **upward behind the fixed center**, not move the active row.
+* Every animation cycle should move the list upward by exactly **one row**.
+* The top item exits the viewport and a new item enters from the bottom, creating an infinite loop.
+* Whichever item reaches the center automatically becomes the active item.
+
+### Layout
+
+* Display **5 visible items** at a time.
+* The **3rd (center) row** is always the active row.
+* The viewport height should be just large enough for 5 rows (avoid excessive whitespace).
+* Maintain consistent row height and spacing.
+
+### Styling
+
+* Active item:
+
+  * Boldest weight
+  * Highest opacity
+  * Brand accent color
+  * Perfectly aligned with the fixed arrow
+* Surrounding items should progressively decrease in opacity (and optionally scale slightly) based on their distance from the center.
+
+### Animation
+
+* Use smooth easing with no jumps.
+* The arrow **must never move**.
+* The highlighted position **must never move**.
+* Only the list content should translate upward.
+
+The final interaction should closely resemble a **wheel picker / slot-machine style infinite vertical list**, where the **center highlight remains stationary while the list scrolls upward beneath it**.

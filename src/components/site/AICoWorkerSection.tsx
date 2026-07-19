@@ -1,6 +1,21 @@
+/**
+ * AICoWorkerSection — wheel-picker style infinite vertical feature navigator.
+ *
+ * Architecture:
+ *   • LOOPED = features × 3  (so there are real items above AND below at all times)
+ *   • `step` starts at FEATURES.length (middle copy) and counts up.
+ *   • translateY = (CENTER − step) × ITEM_H  →  item[step] always sits at center row.
+ *   • Arrow and center highlight are absolutely-positioned; they never move.
+ *   • Only the <ul> translates.
+ *   • Silent reset: when step hits 2×FEATURES.length we snap back to FEATURES.length
+ *     (identical visual position in the middle copy) with animation off for one frame.
+ */
+
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import bgImage from "@/assets/erpcrew-section-bg.png";
+
+// ─── data ────────────────────────────────────────────────────────────────────
 
 const FEATURES = [
   "Natural Language Process Automation",
@@ -13,46 +28,53 @@ const FEATURES = [
   "Seamless Dynamics 365 Integration",
 ];
 
-// Triplicate so there's always content above and below visible window
-const LOOPED = [...FEATURES, ...FEATURES, ...FEATURES];
+// ─── layout constants ─────────────────────────────────────────────────────────
 
-const VISIBLE = 5;                        // rows in the viewport
-const CENTER  = Math.floor(VISIBLE / 2); // = 2 (0-indexed center slot)
-const ITEM_H  = 72;                       // px per row
-const INTERVAL = 2200;                    // ms between steps
+const VISIBLE   = 5;                        // rows shown at once
+const CENTER    = Math.floor(VISIBLE / 2);  // = 2  (0-indexed middle slot)
+const ITEM_H    = 72;                       // px  – height of every row
+const VIEWPORT  = VISIBLE * ITEM_H;        // px  – total height of the picker
+const INTERVAL  = 2200;                     // ms  – auto-advance period
+
+// Triple so that, at any step, slots above AND below the center are filled.
+const LOOPED  = [...FEATURES, ...FEATURES, ...FEATURES];
+const N       = FEATURES.length;            // = 8
+
+// ─── component ───────────────────────────────────────────────────────────────
 
 export function AICoWorkerSection() {
-  // `step` counts total advances; we translate by -step * ITEM_H
-  const [step, setStep]         = useState(0);
-  const [animated, setAnimated] = useState(true);
+  // Start in the middle copy so rows are populated above and below immediately.
+  const [step, setStep]       = useState(N);
+  const [animate, setAnimate] = useState(true);
 
+  // Auto-advance the list upward.
   useEffect(() => {
     const id = setInterval(() => setStep((s) => s + 1), INTERVAL);
     return () => clearInterval(id);
   }, []);
 
-  // Silent reset: once step goes past FEATURES.length, snap back
+  // Silent reset: when step would exhaust the bottom copy, jump back one full
+  // cycle (N steps) — the tripled list looks identical at step and step±N.
   useEffect(() => {
-    if (step >= FEATURES.length) {
-      setAnimated(false);
-      setStep((s) => s - FEATURES.length);
+    if (step >= 2 * N) {
+      setAnimate(false);          // disable CSS transition for one frame
+      setStep((s) => s - N);     // snap — no visual change, items are identical
     }
   }, [step]);
 
+  // Re-enable the CSS transition on the next animation frame after the snap.
   useEffect(() => {
-    if (!animated) {
-      const raf = requestAnimationFrame(() => setAnimated(true));
+    if (!animate) {
+      const raf = requestAnimationFrame(() => setAnimate(true));
       return () => cancelAnimationFrame(raf);
     }
-  }, [animated]);
+  }, [animate]);
 
-  // The list starts offset so that LOOPED[step] sits in the CENTER slot.
-  // Initial position: slot 0 maps to LOOPED index 0, but we want CENTER in
-  // the middle. We pre-offset by CENTER rows, then subtract step rows.
-  // translateY = (CENTER - step) * ITEM_H
+  // The translation that places item[step] in the center slot:
+  //   item[i].top = i × ITEM_H + translateY
+  //   center slot top = CENTER × ITEM_H
+  //   → translateY = (CENTER − step) × ITEM_H
   const translateY = (CENTER - step) * ITEM_H;
-
-  const viewportH = VISIBLE * ITEM_H; // total height of the scrolling window
 
   return (
     <section
@@ -65,7 +87,7 @@ export function AICoWorkerSection() {
     >
       <div className="relative z-10 mx-auto flex max-w-screen-2xl flex-col items-center gap-12 px-6 py-24 md:flex-row md:items-center md:gap-16 md:px-10 lg:gap-28">
 
-        {/* ── LEFT: copy ── */}
+        {/* ── LEFT: copy ─────────────────────────────────────────────────── */}
         <div className="flex-1">
           <span
             className="inline-block rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white"
@@ -115,20 +137,26 @@ export function AICoWorkerSection() {
           </div>
         </div>
 
-        {/* ── RIGHT: Magnific-style fixed-center scroller ── */}
+        {/* ── RIGHT: wheel picker ─────────────────────────────────────────── */}
         <div
           className="w-full flex-shrink-0 md:w-[440px] lg:w-[520px]"
-          style={{ height: viewportH, position: "relative", overflow: "hidden" }}
+          style={{ position: "relative", height: VIEWPORT, overflow: "hidden" }}
         >
-          {/* ── FIXED arrow — never moves, always at vertical center ── */}
+          {/* ── Fixed teal arrow — absolutely positioned, NEVER moves ── */}
           <div
-            className="pointer-events-none absolute left-0 z-20 flex items-center"
+            aria-hidden
             style={{
-              top: CENTER * ITEM_H,
+              position: "absolute",
+              top: CENTER * ITEM_H,          // exactly the center row's top
+              left: 0,
               height: ITEM_H,
+              display: "flex",
+              alignItems: "center",
+              zIndex: 20,
+              pointerEvents: "none",
             }}
           >
-            {/* Teal solid triangle */}
+            {/* CSS border-trick triangle — pure, no SVG */}
             <span
               style={{
                 display: "inline-block",
@@ -136,74 +164,88 @@ export function AICoWorkerSection() {
                 height: 0,
                 borderTop: "9px solid transparent",
                 borderBottom: "9px solid transparent",
-                borderLeft: "13px solid #2ababe",
-                marginRight: "1rem",
+                borderLeft: "14px solid #2ababe",
                 flexShrink: 0,
               }}
             />
           </div>
 
-          {/* Top fade — blends into the hex-bg colours */}
+          {/* Top fade mask */}
           <div
-            className="pointer-events-none absolute inset-x-0 top-0 z-10"
+            aria-hidden
             style={{
-              height: ITEM_H * 1.6,
-              background: "linear-gradient(to bottom, rgba(248,250,252,0.96) 0%, rgba(248,250,252,0) 100%)",
+              position: "absolute",
+              inset: "0 0 auto 0",
+              height: ITEM_H * 1.5,
+              background: "linear-gradient(to bottom, rgba(245,248,252,1) 0%, rgba(245,248,252,0) 100%)",
+              zIndex: 10,
+              pointerEvents: "none",
             }}
           />
-          {/* Bottom fade */}
+          {/* Bottom fade mask */}
           <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
+            aria-hidden
             style={{
-              height: ITEM_H * 1.6,
-              background: "linear-gradient(to top, rgba(248,250,252,0.96) 0%, rgba(248,250,252,0) 100%)",
+              position: "absolute",
+              inset: "auto 0 0 0",
+              height: ITEM_H * 1.5,
+              background: "linear-gradient(to top, rgba(245,248,252,1) 0%, rgba(245,248,252,0) 100%)",
+              zIndex: 10,
+              pointerEvents: "none",
             }}
           />
 
-          {/* ── Scrolling list — translates up; arrow stays put ── */}
+          {/* ── Scrolling list ── */}
           <ul
-            className="absolute left-0 top-0 w-full"
             style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              margin: 0,
+              padding: 0,
+              listStyle: "none",
               transform: `translateY(${translateY}px)`,
-              transition: animated
-                ? `transform ${Math.round(INTERVAL * 0.38)}ms cubic-bezier(0.4,0,0.2,1)`
+              transition: animate
+                ? `transform ${Math.round(INTERVAL * 0.4)}ms cubic-bezier(0.4,0,0.2,1)`
                 : "none",
             }}
           >
             {LOOPED.map((label, i) => {
-              // Distance from the center slot for this item at current step
-              // When step=0: item i occupies visual slot i, center slot = CENTER
-              // So dist = i - CENTER - step  (negative = above center)
-              const dist    = i - step - CENTER;
+              // Signed distance from center: negative = above, positive = below.
+              // When i === step, dist === 0 → this item IS at the center slot.
+              const dist    = i - step;
               const absDist = Math.abs(dist);
-              const isCenter = dist === 0;
+              const isActive = dist === 0;
 
+              // Items more than CENTER slots away are invisible (outside viewport).
               const opacity =
                 absDist === 0 ? 1
-                : absDist === 1 ? 0.42
-                : absDist === 2 ? 0.16
+                : absDist === 1 ? 0.4
+                : absDist === 2 ? 0.15
                 : 0;
 
               return (
                 <li
                   key={i}
-                  className="flex items-center"
                   style={{
                     height: ITEM_H,
-                    // indent by the arrow width so text lines up after it
-                    paddingLeft: "2rem",
+                    display: "flex",
+                    alignItems: "center",
+                    // Indent so text starts after the fixed arrow (arrow ~24px + 1rem gap)
+                    paddingLeft: "2.25rem",
                     opacity,
-                    transition: "opacity 0.35s ease",
+                    transition: "opacity 0.4s ease",
                   }}
                 >
                   <span
                     style={{
-                      fontSize: isCenter ? "1.65rem" : "1.4rem",
-                      fontWeight: isCenter ? 800 : 600,
+                      fontSize: isActive ? "1.625rem" : "1.375rem",
+                      fontWeight: isActive ? 800 : 500,
                       lineHeight: 1.15,
-                      color: isCenter ? "#051895" : "#334155",
-                      letterSpacing: isCenter ? "-0.02em" : "-0.01em",
-                      transition: "font-size 0.35s ease, color 0.35s ease, font-weight 0.35s ease",
+                      color: isActive ? "#051895" : "#475569",
+                      letterSpacing: isActive ? "-0.025em" : "-0.01em",
+                      transition: "font-size 0.4s ease, color 0.4s ease, font-weight 0.4s ease",
                       whiteSpace: "nowrap",
                     }}
                   >
