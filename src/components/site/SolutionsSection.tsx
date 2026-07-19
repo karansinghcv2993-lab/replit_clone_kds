@@ -19,11 +19,11 @@ export function SolutionsSection() {
       className="border-b border-border bg-surface px-6 py-16 md:px-10 md:py-20"
     >
       <div className="mx-auto max-w-screen-2xl">
-        <div className="mb-2 inline-flex items-center gap-2 rounded-md bg-foreground px-2 py-1 text-xs font-semibold uppercase tracking-widest text-background">
+        <div className="mb-2 inline-flex items-center gap-2 rounded-md px-2 py-1 text-xs font-semibold uppercase tracking-widest text-white" style={{ background: "#2ababe" }}>
           <Network className="h-3.5 w-3.5" />
           How AI Agents Work Together
         </div>
-        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+        <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl" style={{ color: "#051895" }}>
           End-to-End Business Process Automation
         </h2>
         <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
