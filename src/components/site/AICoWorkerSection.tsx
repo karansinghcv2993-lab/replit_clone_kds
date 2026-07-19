@@ -170,30 +170,6 @@ export function AICoWorkerSection() {
             />
           </div>
 
-          {/* Top fade mask */}
-          <div
-            aria-hidden
-            style={{
-              position: "absolute",
-              inset: "0 0 auto 0",
-              height: ITEM_H * 1.5,
-              background: "linear-gradient(to bottom, rgba(245,248,252,1) 0%, rgba(245,248,252,0) 100%)",
-              zIndex: 10,
-              pointerEvents: "none",
-            }}
-          />
-          {/* Bottom fade mask */}
-          <div
-            aria-hidden
-            style={{
-              position: "absolute",
-              inset: "auto 0 0 0",
-              height: ITEM_H * 1.5,
-              background: "linear-gradient(to top, rgba(245,248,252,1) 0%, rgba(245,248,252,0) 100%)",
-              zIndex: 10,
-              pointerEvents: "none",
-            }}
-          />
 
           {/* ── Scrolling list ── */}
           <ul
