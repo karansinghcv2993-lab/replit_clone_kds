@@ -85,9 +85,64 @@ function scrollTo(id: string) {
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+/**
+ * Split a stat string like "90+" into { num: 90, suffix: "+" }.
+ * Returns null if the string doesn't start with a digit (e.g. it's an icon).
+ */
+function parseStatValue(value: string): { num: number; suffix: string } | null {
+  const match = value.match(/^(\d+)(.*)$/);
+  if (!match) return null;
+  return { num: parseInt(match[1], 10), suffix: match[2] };
+}
+
+/**
+ * Counts from 0 → target with an ease-out cubic curve over `duration` ms.
+ * Resets to 0 whenever `active` flips to false so the next activation
+ * always starts from zero.
+ */
+function useCountUp(target: number, active: boolean, duration = 1200): number {
+  const [count, setCount] = useState(0);
+  const rafRef = useRef<number | null>(null);
+  const startRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!active) {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      setCount(0);
+      return;
+    }
+
+    startRef.current = null;
+
+    const tick = (timestamp: number) => {
+      if (startRef.current === null) startRef.current = timestamp;
+      const t = Math.min((timestamp - startRef.current) / duration, 1);
+      // Ease-out cubic: fast start, decelerates to final value
+      const eased = 1 - Math.pow(1 - t, 3);
+      setCount(Math.round(eased * target));
+      if (t < 1) rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
+  }, [active, target, duration]);
+
+  return count;
+}
+
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
 function StatTile({ value, label, visible }: { value: React.ReactNode; label: string; visible: boolean }) {
+  // Determine if this tile has a numeric value we can animate
+  const parsed = typeof value === "string" ? parseStatValue(value) : null;
+  const count = useCountUp(parsed?.num ?? 0, visible && parsed !== null);
+
+  const displayValue = parsed
+    ? `${count}${parsed.suffix}`
+    : value;
+
   return (
     <div
       className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur transition-all duration-500"
@@ -96,7 +151,9 @@ function StatTile({ value, label, visible }: { value: React.ReactNode; label: st
         transform: visible ? "translateY(0)" : "translateY(12px)",
       }}
     >
-      <div className="flex h-8 items-center text-2xl font-bold text-white md:text-3xl">{value}</div>
+      <div className="flex h-8 items-center text-2xl font-bold text-white md:text-3xl">
+        {displayValue}
+      </div>
       <div className="mt-2 text-xs text-white/80 md:text-sm">{label}</div>
     </div>
   );
