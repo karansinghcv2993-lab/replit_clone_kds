@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "eYiMbm_ji-aGFOK6fq3ji"
+uri = "file://Static-Website.zip"
+type = "unspecified"
+title = "KDS ERP Crew — Static Website"

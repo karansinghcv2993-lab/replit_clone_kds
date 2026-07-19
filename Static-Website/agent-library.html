@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent Library — KDS ERP Crew</title>
+  <meta name="description" content="Explore the complete KDS ERP Crew AI Agent Library featuring intelligent AI agents for Microsoft Dynamics 365." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('assets/fonts/inter.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+    html { scroll-behavior: smooth; }
+    /* Catalogue sticky filter sits just below the sticky header */
+    #catalogue-filter-sticky {
+      position: sticky;
+      top: 86px; /* updated by JS after measuring header */
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-background text-foreground">
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
+    <div class="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-3 md:px-10">
+      <a href="index.html">
+        <img src="assets/images/kds-logo-header.png" alt="KDS ERP Crew" class="h-[3.75rem] object-contain" />
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <nav class="flex items-center gap-8">
+          <a href="agent-library.html" class="text-[15.4px] font-medium transition hover:text-[#051895]" style="color:#051895">Agent Library</a>
+          <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]">About Us</a>
+        </nav>
+        <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+           style="background-color:#051895">Request a Quote</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobile-nav" class="mobile-menu flex-col gap-3 border-t border-gray-200 bg-white px-6 py-4 md:hidden">
+      <a href="agent-library.html" class="text-sm font-medium hover:text-[#051895]" style="color:#051895">Agent Library</a>
+      <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-gray-700 hover:text-[#051895]">About Us</a>
+      <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer"
+         class="inline-flex w-fit items-center rounded-md px-4 py-2 text-sm font-semibold text-white"
+         style="background-color:#051895">Request a Quote</a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ CATALOGUE SECTION ═══════════════════════════ -->
+  <section id="catalogue" class="bg-white px-6 py-16 md:px-10 md:py-20">
+    <div class="mx-auto max-w-screen-2xl">
+
+      <!-- Section header -->
+      <div class="flex items-center gap-2">
+        <div class="rounded-lg bg-foreground p-1.5 text-background">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Full Catalogue</span>
+      </div>
+      <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">The KDS ERP Crew Agent Library</h2>
+      <p class="mt-3 max-w-full text-base leading-relaxed text-muted-foreground">
+        Explore the complete KDS ERP Crew AI Agent Library, featuring intelligent AI agents for Microsoft Dynamics 365 across Finance, Sales, Procurement, Supply Chain, Manufacturing, Retail, Healthcare, BFSI, Insurance, and more. Each agent is designed to automate business processes, enhance productivity, and deliver enterprise-grade AI automation.
+      </p>
+
+      <!-- Notice banner -->
+      <div class="mt-3 inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2 text-xs font-semibold text-amber-800">
+        Every AI agent is configured, customized, and deployed by Key Dynamics Solutions to fit your unique business needs.
+        <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-900">Contact us to get started →</a>
+      </div>
+
+      <!-- Sticky filter bar -->
+      <div id="catalogue-filter-sticky" class="-mx-6 mt-8 border-b border-border bg-white/90 px-6 py-3 backdrop-blur md:-mx-10 md:px-10">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+
+          <!-- Category filter buttons (populated by JS) -->
+          <div id="filter-bar" class="flex flex-wrap gap-1.5"></div>
+
+          <!-- Search input -->
+          <div class="relative w-full md:w-72">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" style="color:var(--muted-foreground)"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input id="search-input" type="text" placeholder="Search agents..."
+              class="w-full rounded-md border border-input bg-white py-2 pl-9 pr-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring" />
+          </div>
+        </div>
+
+        <!-- Count label -->
+        <p id="catalogue-count" class="mt-2 text-xs text-muted-foreground"></p>
+      </div>
+
+      <!-- Agent grid (populated by JS) -->
+      <div id="catalogue-grid" class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+
+      <!-- Empty state -->
+      <div id="catalogue-empty" class="hidden mt-10 rounded-xl border border-dashed border-border bg-surface p-10 text-center text-sm text-muted-foreground">
+        No agents match your filter.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="px-6 py-12 text-hero-foreground md:px-10" style="background-color:#051895">
+    <div class="mx-auto max-w-screen-2xl">
+      <div class="flex flex-col justify-between gap-8 md:flex-row md:items-start">
+        <div class="max-w-md">
+          <div class="flex items-center">
+            <img src="assets/images/kds-logo-full.png" alt="KDS ERP Crew" class="h-[3.75rem] object-contain" />
+          </div>
+          <p class="mt-3 text-sm text-hero-muted">
+            Enterprise AI agents built for Microsoft Dynamics 365 to automate business processes, orchestrate cross-functional workflows, and deliver intelligent, policy-driven enterprise operations.
+          </p>
+        </div>
+        <div class="flex flex-col items-start gap-2 text-sm md:items-end md:self-end">
+          <div class="flex gap-6 mb-3">
+            <div class="md:text-right">
+              <p class="text-2xl font-bold text-hero-foreground">150+</p>
+              <p class="mt-0.5 text-xs text-hero-muted">AI Agents</p>
+            </div>
+            <div class="border-l border-white/10 pl-6 md:text-right">
+              <p class="text-sm font-semibold text-hero-foreground">Across 11 Business</p>
+              <p class="text-xs text-hero-muted">Process Categories</p>
+            </div>
+          </div>
+          <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="text-hero-muted hover:text-hero-foreground">www.kdserpcrew.ai</a>
+          <p class="text-xs text-hero-muted">Microsoft Dynamics 365 | Power Platform | Azure AI Ready</p>
+          <p class="text-xs text-hero-muted">© 2026 Key Dynamics Solutions. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════ DEMO MODAL ═══════════════════════════ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+    <div id="demo-modal-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="fixed inset-0 flex items-center justify-center p-4">
+      <div class="relative w-full max-w-lg rounded-xl bg-white shadow-2xl p-6">
+        <button id="demo-modal-close" class="absolute right-4 top-4 rounded-sm p-1 opacity-70 hover:opacity-100 transition" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <div>
+          <div class="mb-2 inline-flex w-fit items-center gap-2 rounded-full bg-brand-soft px-2.5 py-1 text-xs font-semibold text-brand">
+            <span id="demo-modal-cat"></span>
+          </div>
+          <h2 id="demo-modal-title" class="text-xl font-bold text-foreground mt-1"></h2>
+          <p id="demo-modal-desc" class="mt-2 text-sm leading-relaxed text-muted-foreground"></p>
+        </div>
+        <div class="mt-4 flex flex-col items-center justify-center rounded-lg border border-dashed border-border bg-surface p-8 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#2ababe"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          <p class="mt-3 text-sm font-medium">Demo video unavailable in this export</p>
+          <p class="mt-1 text-xs text-muted-foreground">On the live site this opens a full agent demo video.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═════════════════════════ SCRIPTS ═════════════════════════ -->
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+      var nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('open');
+    });
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/agent-library.js"></script>
+</body>
+</html>

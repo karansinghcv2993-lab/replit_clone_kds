@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enterprise AI Agent Catalogue — KDS ERP Crew</title>
+  <meta name="description" content="A comprehensive library of enterprise AI agents built to automate, orchestrate, and optimize business processes across Microsoft Dynamics 365." />
+  <meta property="og:title" content="Enterprise AI Agent Catalogue — KDS ERP Crew" />
+  <meta property="og:description" content="90+ enterprise AI agents for Microsoft Dynamics 365 across Finance, Sales, Procurement, Supply Chain, Manufacturing, Retail, Healthcare, BFSI, Insurance, and more." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Inter font: bundled for offline use; Google Fonts as online enhancement -->
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('assets/fonts/inter.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Additional styles for components not covered by utility classes */
+    .hero-bg-layer img { transition: transform 6s ease-out, opacity 0.7s ease; }
+    .modal-open { overflow: hidden; }
+    .line-clamp-4 { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    /* Mobile navigation hamburger */
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-background text-foreground">
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
+    <div class="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-3 md:px-10">
+      <!-- Logo -->
+      <a href="index.html">
+        <img src="assets/images/kds-logo-header.png" alt="KDS ERP Crew" class="h-[3.75rem] object-contain" />
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden items-center gap-8 md:flex">
+        <nav class="flex items-center gap-8">
+          <a href="agent-library.html" class="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]">Agent Library</a>
+          <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]">About Us</a>
+        </nav>
+        <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+           style="background-color:#051895">Request a Quote</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <!-- Mobile nav dropdown -->
+    <div id="mobile-nav" class="mobile-menu flex-col gap-3 border-t border-gray-200 bg-white px-6 py-4 md:hidden">
+      <a href="agent-library.html" class="text-sm font-medium text-gray-700 hover:text-[#051895]">Agent Library</a>
+      <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-gray-700 hover:text-[#051895]">About Us</a>
+      <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer"
+         class="inline-flex w-fit items-center rounded-md px-4 py-2 text-sm font-semibold text-white"
+         style="background-color:#051895">Request a Quote</a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════ HERO SECTION ═══════════════════════════════ -->
+  <section class="relative overflow-clip flex flex-col" style="min-height:calc(100svh - var(--header-h,5.375rem) - 45px)">
+
+    <!-- Background layers (crossfade) -->
+    <div class="hero-bg-layer pointer-events-none absolute inset-0 duration-700 transition-opacity" style="z-index:1;opacity:1;">
+      <img src="assets/images/hero-slide-1.jpg" alt="" width="1920" height="960" loading="eager" decoding="async" class="h-full w-full object-cover object-top" style="transform:scale(1.03)" />
+    </div>
+    <div class="hero-bg-layer pointer-events-none absolute inset-0 duration-700 transition-opacity" style="z-index:0;opacity:0;">
+      <img src="assets/images/hero-slide-2.jpg" alt="" width="1920" height="960" loading="lazy" decoding="async" class="h-full w-full object-cover object-top" />
+    </div>
+    <div class="hero-bg-layer pointer-events-none absolute inset-0 duration-700 transition-opacity" style="z-index:0;opacity:0;">
+      <img src="assets/images/hero-slide-3.jpg" alt="" width="1920" height="960" loading="lazy" decoding="async" class="h-full w-full object-cover object-top" />
+    </div>
+
+    <!-- Dark overlay -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-[2]" style="background:rgba(3,14,89,0.68)"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 mx-auto flex w-full max-w-screen-2xl flex-1 flex-col px-6 pt-10 md:px-10 md:pt-14">
+      <div class="mt-14 flex flex-1 flex-col justify-between max-w-5xl md:mt-20 pb-[85px]" style="gap:2rem">
+
+        <!-- Heading + description -->
+        <div id="hero-text" class="transition-all duration-300" style="opacity:1;transform:translateY(0)">
+          <h1 id="hero-heading" class="font-bold leading-[1.05] tracking-tight text-[2.55rem] md:text-[3.1875rem] text-white">
+            Digital Transaction Management Assistant
+          </h1>
+          <div class="mt-5 max-w-2xl">
+            <p id="hero-desc" class="text-base leading-relaxed text-white/90 md:text-lg">
+              Your AI-powered digital assistant for creating, validating, tracking, and managing ERP transactions with speed, accuracy, and intelligent automation. Streamline complex business processes, reduce manual effort, ensure compliance, and gain real-time visibility across every transaction.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-wrap items-center gap-3">
+          <button id="hero-btn-highlights"
+            class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-brand-foreground shadow-lg transition hover:brightness-110"
+            style="background-color:#2ababe">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+            Agent Highlights
+          </button>
+          <button id="hero-btn-catalogue"
+            class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+            style="background-color:#051895">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Complete AI Agent Catalogue
+          </button>
+          <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+            style="background-color:#fba226">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Back to Key Dynamic Solutions
+          </a>
+        </div>
+
+        <!-- Stats grid (populated by JS) -->
+        <div id="hero-stats" class="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"></div>
+      </div>
+    </div>
+
+    <!-- Nav arrows -->
+    <button id="hero-prev" aria-label="Previous slide"
+      class="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-md backdrop-blur transition hover:bg-white md:left-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-700"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button id="hero-next" aria-label="Next slide"
+      class="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-md backdrop-blur transition hover:bg-white md:right-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-700"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+
+    <!-- Pagination dots -->
+    <div class="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+      <button class="hero-dot h-2.5 rounded-full transition-all duration-300" aria-label="Go to slide 1" style="width:2rem;background-color:#051895"></button>
+      <button class="hero-dot h-2.5 rounded-full transition-all duration-300" aria-label="Go to slide 2" style="width:0.625rem;background-color:rgba(5,24,149,0.3)"></button>
+      <button class="hero-dot h-2.5 rounded-full transition-all duration-300" aria-label="Go to slide 3" style="width:0.625rem;background-color:rgba(5,24,149,0.3)"></button>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════ HIGHLIGHTS SECTION ═════════════════════════ -->
+  <section id="highlights" class="border-b border-border bg-white px-6 py-16 md:px-10 md:py-20">
+    <div class="mx-auto max-w-screen-2xl">
+      <div class="mb-2 inline-flex items-center gap-2 rounded-md bg-brand px-2 py-1 text-xs font-semibold uppercase tracking-widest text-brand-foreground">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        Agent Highlights
+      </div>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl" style="color:#051895">Experience AI Agents in Action</h2>
+      <p class="mt-3 max-w-full text-base leading-relaxed text-muted-foreground">
+        Discover featured KDS ERP Crew AI agents built for Microsoft Dynamics 365. Explore intelligent solutions across Order to Cash, Procure to Pay, Supply Chain, Finance, Manufacturing, Retail, Healthcare, BFSI, and more. Select any agent to learn how it transforms business operations.
+      </p>
+
+      <!-- Tab bar (populated by JS) -->
+      <div class="mt-8 overflow-x-auto">
+        <div id="highlights-tab-bar" class="flex min-w-max gap-1 border-b border-border"></div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+        <p class="text-sm text-muted-foreground">
+          <span id="highlights-count" class="font-semibold text-foreground"></span>
+          with live video demos
+        </p>
+        <button id="highlights-browse-btn" class="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline">
+          <span id="highlights-hint"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Cards grid (populated by JS) -->
+      <div id="highlights-grid" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+
+      <!-- Bottom CTA -->
+      <div class="mt-12 rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <p class="text-sm font-semibold text-foreground">Need something more specialised?</p>
+        <p class="mt-1 text-sm text-muted-foreground">Explore the complete KDS ERP Crew AI Agent Library with 90+ agents across all industries and process categories.</p>
+        <a href="agent-library.html"
+          class="mt-4 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition hover:opacity-90">
+          Browse Full Catalogue
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ AI CO-WORKER SECTION ═══════════════════════ -->
+  <section class="relative w-full overflow-hidden"
+    style="background-image:url('assets/images/erpcrew-section-bg.png');background-size:cover;background-position:center">
+    <div class="relative z-10 mx-auto flex max-w-screen-2xl flex-col items-center gap-12 px-6 py-24 md:flex-row md:items-center md:gap-16 md:px-10 lg:gap-28">
+
+      <!-- Left: copy -->
+      <div class="flex-1">
+        <span class="inline-block rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white" style="background:#2ababe">AI Co-Worker</span>
+        <h2 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl" style="color:#051895">
+          Your AI Co-Worker, <span style="color:#fba226">Always On</span>
+        </h2>
+        <p class="mt-5 max-w-lg text-base leading-relaxed text-slate-600">
+          KDS ERP Crew deploys intelligent AI agents that work alongside your teams inside Microsoft Dynamics&nbsp;365 — automating repetitive tasks, surfacing real-time insights, and orchestrating complex workflows so your people can focus on what matters most.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="agent-library.html"
+            class="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            style="background:#051895">
+            Explore Agent Library
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#highlights" onclick="event.preventDefault();document.getElementById('highlights').scrollIntoView({behavior:'smooth'})"
+            class="inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-sm font-semibold transition hover:bg-slate-50"
+            style="border-color:#051895;color:#051895">
+            See Live Demos
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: wheel picker -->
+      <div id="wheel-container" class="w-full flex-shrink-0 md:w-[440px] lg:w-[520px]"
+        style="position:relative;height:360px;overflow:hidden"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ DEMO STEPS SECTION ════════════════════════ -->
+  <section id="demo-steps-section" class="relative" style="height:500vh">
+    <div class="sticky top-0 flex h-[100dvh] flex-col overflow-clip" style="background-color:#f7f8ff">
+
+      <!-- Section header -->
+      <div class="flex-shrink-0 px-6 pb-4 pt-10 text-center md:pt-12">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-widest" style="color:#2ababe">Get Started</p>
+        <h2 class="text-3xl font-bold tracking-tight md:text-4xl lg:text-[2.5rem]" style="color:#051895">
+          Book Your KDS ERP Crew Demo in 4 Simple Steps
+        </h2>
+        <p class="mx-auto mt-3 max-w-2xl text-base text-gray-500 md:text-[1.0625rem]">
+          Experience KDS ERP Crew in action. Book a personalized demo to see how AI-powered digital assistants automate and optimize your ERP workflows.
+        </p>
+      </div>
+
+      <!-- Progress dots -->
+      <div class="flex-shrink-0 flex items-center justify-center gap-2 pb-3">
+        <div class="demo-step-dot rounded-full transition-all duration-300" style="height:8px;width:32px;background-color:#051895"></div>
+        <div class="demo-step-dot rounded-full transition-all duration-300" style="height:8px;width:8px;background-color:rgba(5,24,149,0.18)"></div>
+        <div class="demo-step-dot rounded-full transition-all duration-300" style="height:8px;width:8px;background-color:rgba(5,24,149,0.18)"></div>
+        <div class="demo-step-dot rounded-full transition-all duration-300" style="height:8px;width:8px;background-color:rgba(5,24,149,0.18)"></div>
+      </div>
+
+      <!-- Card stack -->
+      <div class="relative flex flex-1 items-center justify-center overflow-clip px-4 pb-6 md:px-10 md:pb-8">
+        <div class="relative w-full max-w-4xl rounded-3xl shadow-2xl" style="height:min(400px,calc(100dvh - 250px))">
+          <div class="absolute inset-0 overflow-hidden rounded-3xl">
+
+            <!-- Step 1 -->
+            <div class="demo-step-card-wrapper absolute inset-0" style="transform:translateY(0);z-index:1;will-change:transform">
+              <div class="flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white md:flex-row">
+                <div class="relative flex h-[52vw] max-h-[340px] min-h-[180px] flex-shrink-0 items-center justify-center overflow-hidden md:h-auto md:max-h-none md:min-h-0 md:w-[46%]" style="background-color:#ede8e1">
+                  <img src="assets/images/demo-step-1.png" alt="Step 1 form" class="h-full w-full object-contain" draggable="false" />
+                </div>
+                <div class="flex flex-1 flex-col justify-center px-7 py-7 md:px-10 md:py-10 lg:px-12 lg:py-12">
+                  <span class="inline-flex w-fit items-center rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-widest" style="background-color:rgba(251,162,38,0.12);color:#fba226">Step 1</span>
+                  <p aria-hidden="true" class="mt-3 select-none font-black leading-none" style="font-size:clamp(3rem,6vw,5rem);color:rgba(5,24,149,0.07)">01</p>
+                  <h3 class="-mt-1 text-xl font-bold leading-snug md:text-2xl lg:text-[1.625rem]" style="color:#051895">Share Your Requirements</h3>
+                  <p class="mt-3 max-w-md text-[0.9375rem] leading-relaxed text-gray-500">Tell us about your business, ERP environment, and the processes you want to automate.</p>
+                  <div class="mt-6 h-1 w-10 rounded-full" style="background-color:#2ababe"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="demo-step-card-wrapper absolute inset-0" style="transform:translateY(110%);z-index:2;will-change:transform">
+              <div class="flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white md:flex-row">
+                <div class="relative flex h-[52vw] max-h-[340px] min-h-[180px] flex-shrink-0 items-center justify-center overflow-hidden md:h-auto md:max-h-none md:min-h-0 md:w-[46%]" style="background-color:#ede8e1">
+                  <img src="assets/images/demo-step-2.png" alt="Step 2 schedule" class="h-full w-full object-contain" draggable="false" />
+                </div>
+                <div class="flex flex-1 flex-col justify-center px-7 py-7 md:px-10 md:py-10 lg:px-12 lg:py-12">
+                  <span class="inline-flex w-fit items-center rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-widest" style="background-color:rgba(251,162,38,0.12);color:#fba226">Step 2</span>
+                  <p aria-hidden="true" class="mt-3 select-none font-black leading-none" style="font-size:clamp(3rem,6vw,5rem);color:rgba(5,24,149,0.07)">02</p>
+                  <h3 class="-mt-1 text-xl font-bold leading-snug md:text-2xl lg:text-[1.625rem]" style="color:#051895">Schedule Your Demo</h3>
+                  <p class="mt-3 max-w-md text-[0.9375rem] leading-relaxed text-gray-500">Choose a convenient date and time for a personalized live demonstration with our ERP experts.</p>
+                  <div class="mt-6 h-1 w-10 rounded-full" style="background-color:#2ababe"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="demo-step-card-wrapper absolute inset-0" style="transform:translateY(110%);z-index:3;will-change:transform">
+              <div class="flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white md:flex-row">
+                <div class="relative flex h-[52vw] max-h-[340px] min-h-[180px] flex-shrink-0 items-center justify-center overflow-hidden md:h-auto md:max-h-none md:min-h-0 md:w-[46%]" style="background-color:#ede8e1">
+                  <img src="assets/images/demo-step-3.png" alt="Step 3 experience" class="h-full w-full object-contain" draggable="false" />
+                </div>
+                <div class="flex flex-1 flex-col justify-center px-7 py-7 md:px-10 md:py-10 lg:px-12 lg:py-12">
+                  <span class="inline-flex w-fit items-center rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-widest" style="background-color:rgba(251,162,38,0.12);color:#fba226">Step 3</span>
+                  <p aria-hidden="true" class="mt-3 select-none font-black leading-none" style="font-size:clamp(3rem,6vw,5rem);color:rgba(5,24,149,0.07)">03</p>
+                  <h3 class="-mt-1 text-xl font-bold leading-snug md:text-2xl lg:text-[1.625rem]" style="color:#051895">Experience KDS ERP Crew</h3>
+                  <p class="mt-3 max-w-md text-[0.9375rem] leading-relaxed text-gray-500">See AI-powered agents automate transactions, approvals, reporting, and business workflows in real time.</p>
+                  <div class="mt-6 h-1 w-10 rounded-full" style="background-color:#2ababe"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="demo-step-card-wrapper absolute inset-0" style="transform:translateY(110%);z-index:4;will-change:transform">
+              <div class="flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white md:flex-row">
+                <div class="relative flex h-[52vw] max-h-[340px] min-h-[180px] flex-shrink-0 items-center justify-center overflow-hidden md:h-auto md:max-h-none md:min-h-0 md:w-[46%]" style="background-color:#ede8e1">
+                  <img src="assets/images/demo-step-4.png" alt="Step 4 launch" class="h-full w-full object-contain" draggable="false" />
+                </div>
+                <div class="flex flex-1 flex-col justify-center px-7 py-7 md:px-10 md:py-10 lg:px-12 lg:py-12">
+                  <span class="inline-flex w-fit items-center rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-widest" style="background-color:rgba(251,162,38,0.12);color:#fba226">Step 4</span>
+                  <p aria-hidden="true" class="mt-3 select-none font-black leading-none" style="font-size:clamp(3rem,6vw,5rem);color:rgba(5,24,149,0.07)">04</p>
+                  <h3 class="-mt-1 text-xl font-bold leading-snug md:text-2xl lg:text-[1.625rem]" style="color:#051895">Launch Your AI Journey</h3>
+                  <p class="mt-3 max-w-md text-[0.9375rem] leading-relaxed text-gray-500">Receive a tailored implementation roadmap and discover how KDS ERP Crew can accelerate your enterprise transformation.</p>
+                  <div class="mt-6 h-1 w-10 rounded-full" style="background-color:#2ababe"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════ SOLUTIONS SECTION ═════════════════════════ -->
+  <section id="solutions" class="border-b border-border bg-surface px-6 py-16 md:px-10 md:py-20">
+    <div class="mx-auto max-w-screen-2xl">
+      <div class="mb-2 inline-flex items-center gap-2 rounded-md px-2 py-1 text-xs font-semibold uppercase tracking-widest text-white" style="background:#2ababe">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+        How AI Agents Work Together
+      </div>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl" style="color:#051895">End-to-End Business Process Automation</h2>
+      <div class="mt-3 flex flex-wrap items-end justify-between gap-3">
+        <p class="max-w-full text-base leading-relaxed text-muted-foreground">
+          KDS ERP Crew brings together intelligent AI agents that work seamlessly across Microsoft Dynamics 365 to automate business processes from start to finish. Each agent performs specialized tasks, shares contextual data, and orchestrates workflows to deliver faster decisions, higher productivity, and intelligent business outcomes.
+        </p>
+        <button id="solutions-view-all" class="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline">
+          View All AI Solutions
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Solutions grid (populated by JS) -->
+      <div id="solutions-grid" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="px-6 py-12 text-hero-foreground md:px-10" style="background-color:#051895">
+    <div class="mx-auto max-w-screen-2xl">
+      <div class="flex flex-col justify-between gap-8 md:flex-row md:items-start">
+        <div class="max-w-md">
+          <div class="flex items-center">
+            <img src="assets/images/kds-logo-full.png" alt="KDS ERP Crew" class="h-[3.75rem] object-contain" />
+          </div>
+          <p class="mt-3 text-sm text-hero-muted">
+            Enterprise AI agents built for Microsoft Dynamics 365 to automate business processes, orchestrate cross-functional workflows, and deliver intelligent, policy-driven enterprise operations.
+          </p>
+        </div>
+        <div class="flex flex-col items-start gap-2 text-sm md:items-end md:self-end">
+          <div class="flex gap-6 mb-3">
+            <div class="md:text-right">
+              <p class="text-2xl font-bold text-hero-foreground">150+</p>
+              <p class="mt-0.5 text-xs text-hero-muted">AI Agents</p>
+            </div>
+            <div class="border-l border-white/10 pl-6 md:text-right">
+              <p class="text-sm font-semibold text-hero-foreground">Across 11 Business</p>
+              <p class="text-xs text-hero-muted">Process Categories</p>
+            </div>
+          </div>
+          <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="text-hero-muted hover:text-hero-foreground">www.kdserpcrew.ai</a>
+          <p class="text-xs text-hero-muted">Microsoft Dynamics 365 | Power Platform | Azure AI Ready</p>
+          <p class="text-xs text-hero-muted">© 2026 Key Dynamics Solutions. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════ DEMO MODAL ═══════════════════════════ -->
+  <div id="demo-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+    <div id="demo-modal-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="fixed inset-0 flex items-center justify-center p-4">
+      <div class="relative w-full max-w-lg rounded-xl bg-white shadow-2xl p-6">
+        <button id="demo-modal-close" class="absolute right-4 top-4 rounded-sm p-1 opacity-70 hover:opacity-100 transition" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <div>
+          <div class="mb-2 inline-flex w-fit items-center gap-2 rounded-full bg-brand-soft px-2.5 py-1 text-xs font-semibold text-brand">
+            <span id="demo-modal-cat"></span>
+          </div>
+          <h2 id="demo-modal-title" class="text-xl font-bold text-foreground mt-1"></h2>
+          <p id="demo-modal-desc" class="mt-2 text-sm leading-relaxed text-muted-foreground"></p>
+        </div>
+        <div class="mt-4 flex flex-col items-center justify-center rounded-lg border border-dashed border-border bg-surface p-8 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand" style="color:#2ababe"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          <p class="mt-3 text-sm font-medium">Demo video unavailable in this export</p>
+          <p class="mt-1 text-xs text-muted-foreground">On the live site this opens a full agent demo video.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════ SOLUTIONS MODAL ════════════════════════ -->
+  <div id="solution-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+    <div id="sol-modal-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="fixed inset-0 flex items-center justify-center p-4">
+      <div class="relative w-full max-w-xl rounded-xl bg-white shadow-2xl p-6">
+        <button id="sol-modal-close" class="absolute right-4 top-4 rounded-sm p-1 opacity-70 hover:opacity-100 transition" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <div>
+          <div class="mb-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-2.5 py-1 text-xs font-semibold text-brand">
+            <span id="sol-modal-steps"></span>
+          </div>
+          <h2 id="sol-modal-title" class="text-xl font-bold text-foreground mt-1"></h2>
+          <p id="sol-modal-desc" class="mt-2 text-sm leading-relaxed text-muted-foreground"></p>
+        </div>
+        <div class="flex flex-wrap gap-4 border-t border-border pt-4 mt-4 text-sm">
+          <span class="inline-flex items-center gap-1.5 font-semibold text-foreground">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand" style="color:#2ababe"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span id="sol-modal-automation"></span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-muted-foreground">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="sol-modal-outcome"></span>
+          </span>
+        </div>
+        <p class="mt-2 text-xs text-muted-foreground">
+          Contact Key Dynamics Solutions to explore the detailed step-by-step flow and configure this solution for your organization.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═════════════════════════ SCRIPTS ═════════════════════════ -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+      var nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('open');
+    });
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
