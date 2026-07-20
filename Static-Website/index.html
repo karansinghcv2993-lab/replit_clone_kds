@@ -27,6 +27,38 @@
     .line-clamp-4 { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
     /* Smooth scroll */
     html { scroll-behavior: smooth; }
+
+    /* ── Classes missing from the compiled Tailwind snapshot ── */
+
+    /* Flex / layout */
+    .justify-end { justify-content: flex-end }
+
+    /* Spacing – fixed-pixel arbitrary values */
+    .mt-\[30px\]  { margin-top: 30px }
+    .mb-10        { margin-bottom: 2.5rem }
+    .pb-\[85px\]  { padding-bottom: 85px }
+    @media (min-width: 768px) {
+      .md\:mb-\[70px\] { margin-bottom: 70px }
+      .md\:mt-\[70px\] { margin-top: 70px }
+    }
+
+    /* Typography – arbitrary font sizes */
+    .text-\[2\.55rem\]   { font-size: 2.55rem }
+    @media (min-width: 768px) {
+      .md\:text-\[3\.1875rem\] { font-size: 3.1875rem }
+    }
+
+    /* Colours with opacity modifiers */
+    .text-white\/90   { color: rgb(255 255 255 / 0.9) }
+    .text-white\/80   { color: rgb(255 255 255 / 0.8) }
+    .bg-white\/10     { background-color: rgb(255 255 255 / 0.1) }
+    .bg-white\/20     { background-color: rgb(255 255 255 / 0.2) }
+    .border-white\/20 { border-color: rgb(255 255 255 / 0.2) }
+
+    /* Grid */
+    @media (min-width: 768px) {
+      .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+    }
   </style>
 </head>
 <body class="bg-background text-foreground">
