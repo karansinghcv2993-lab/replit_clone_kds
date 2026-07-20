@@ -104,7 +104,7 @@ export function AICoWorkerSection() {
             <span style={{ color: "#fba226" }}>Always On</span>
           </h2>
 
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">
+          <p className="mt-5 text-base leading-relaxed text-slate-600">
             KDS ERP Crew deploys intelligent AI agents that work alongside your
             teams inside Microsoft Dynamics&nbsp;365 — automating repetitive
             tasks, surfacing real-time insights, and orchestrating complex
