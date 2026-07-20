@@ -290,11 +290,11 @@ export function HeroCarousel() {
 
       {/* ── Content ── */}
       <div className="relative z-10 mx-auto flex w-full max-w-screen-2xl flex-1 flex-col px-6 pt-10 md:px-10 md:pt-14">
-        <div className="mt-14 flex flex-1 flex-col justify-between max-w-5xl md:mt-20 pb-[85px]">
+        <div className="mt-14 flex flex-1 flex-col justify-end max-w-5xl md:mt-20 pb-[85px]">
 
           {/* Heading + description */}
           <div
-            className="transition-all duration-300"
+            className="mb-10 md:mb-[70px] transition-all duration-300"
             style={{
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? "translateY(0)" : "translateY(16px)",
@@ -305,13 +305,13 @@ export function HeroCarousel() {
             >
               {slide.heading}
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-white/90 md:text-lg">
+            <p className="mt-[30px] md:mt-[50px] text-base leading-relaxed text-white/90 md:text-lg">
               {slide.description}
             </p>
           </div>
 
           {/* CTA buttons — always visible, don't animate per-slide */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="mb-10 md:mb-[70px] flex flex-wrap items-center gap-3">
             <button
               onClick={() => scrollTo("highlights")}
               className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground shadow-lg shadow-brand/20 transition hover:brightness-110"
