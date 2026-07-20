@@ -17,8 +17,6 @@
   </style>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    .mobile-menu { display: none; }
-    .mobile-menu.open { display: flex; }
     html { scroll-behavior: smooth; }
     /* Catalogue sticky filter sits just below the sticky header */
     #catalogue-filter-sticky {
@@ -38,6 +36,7 @@
       </a>
       <div class="hidden items-center gap-8 md:flex">
         <nav class="flex items-center gap-8">
+          <a href="index.html" class="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]">Home</a>
           <a href="agent-library.html" class="text-[15.4px] font-medium transition hover:text-[#051895]" style="color:#051895">Agent Library</a>
           <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]">About Us</a>
         </nav>
@@ -45,16 +44,6 @@
            class="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
            style="background-color:#051895">Request a Quote</a>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </div>
-    <div id="mobile-nav" class="mobile-menu flex-col gap-3 border-t border-gray-200 bg-white px-6 py-4 md:hidden">
-      <a href="agent-library.html" class="text-sm font-medium hover:text-[#051895]" style="color:#051895">Agent Library</a>
-      <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-gray-700 hover:text-[#051895]">About Us</a>
-      <a href="https://keydynamicssolutions.com/" target="_blank" rel="noopener noreferrer"
-         class="inline-flex w-fit items-center rounded-md px-4 py-2 text-sm font-semibold text-white"
-         style="background-color:#051895">Request a Quote</a>
     </div>
   </header>
 
@@ -165,12 +154,6 @@
   </div>
 
   <!-- ═════════════════════════ SCRIPTS ═════════════════════════ -->
-  <script>
-    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
-      var nav = document.getElementById('mobile-nav');
-      nav.classList.toggle('open');
-    });
-  </script>
   <script src="js/data.js"></script>
   <script src="js/agent-library.js"></script>
 </body>

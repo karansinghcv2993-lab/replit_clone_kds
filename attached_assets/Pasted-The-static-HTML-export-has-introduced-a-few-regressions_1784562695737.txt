@@ -1,0 +1,49 @@
+The static HTML export has introduced a few regressions in the header/navigation compared to the original React application. Please synchronize the header across both the React project and the exported HTML version so they have an identical layout and behavior.
+Required Changes
+1. Add a Home Navigation Item
+* Add a "Home" navigation link immediately to the left of "Agent Library".
+* Implement this change in both:
+    * The React application.
+    * The standalone HTML export.
+* Clicking Home should navigate the user to the homepage (index.html in the static version and the home route in the React application).
+2. Restore the Original Navigation Alignment
+* The navigation links and the "Request a Quote" button should be right-aligned, matching the original React design.
+* The "Request a Quote" button should remain the right-most navigation item.
+3. Remove the Hamburger Menu (HTML Export)
+* The standalone HTML version contains a hamburger (three-line) menu icon on the far right.
+* This element was not part of the original React application.
+* Remove it completely from the desktop layout.
+* The React version should remain unchanged if it already does not contain this button.
+4. Keep Both Versions Consistent
+Ensure that both the React application and the static HTML version have the same:
+* Navigation items
+* Order of links
+* Alignment
+* Spacing
+* Styling
+* Responsive behavior
+The only difference should be the underlying implementation (React vs. static HTML), not the user experience.
+Final Navigation Order
+
+Logo                                  Home | Agent Library | About Us | Request a Quote
+
+Validation
+Before completing the task, verify that:
+* The React application and the static HTML export have identical header layouts.
+* Home appears before Agent Library in both versions.
+* The Request a Quote button is right-aligned and is the last navigation item.
+* The desktop HTML version no longer contains the hamburger menu.
+* All navigation links work correctly in both versions using their respective routing mechanisms.
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,6 +15,12 @@ export function SiteHeader() {
         <div className="hidden items-center gap-8 md:flex">
           <nav className="flex items-center gap-8">
             <Link
+              to="/"
+              className="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]"
+            >
+              Home
+            </Link>
+            <Link
               to="/agent-library"
               className="text-[15.4px] font-medium text-gray-700 transition hover:text-[#051895]"
             >
