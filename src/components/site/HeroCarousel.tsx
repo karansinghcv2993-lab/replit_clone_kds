@@ -305,7 +305,7 @@ export function HeroCarousel() {
             >
               {slide.heading}
             </h1>
-            <p className="mt-[30px] md:mt-[50px] text-base leading-relaxed text-white/90 md:text-lg">
+            <p className="mt-[30px] text-base leading-relaxed text-white/90 md:text-lg">
               {slide.description}
             </p>
           </div>
