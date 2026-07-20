@@ -7,9 +7,9 @@
 
 import { useEffect, useLayoutEffect, useRef, useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight, CheckCircle2, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
-import slide1Bg from "@/assets/hero-slide-1.jpg";
-import slide2Bg from "@/assets/hero-slide-2.jpg";
-import slide3Bg from "@/assets/hero-slide-3.jpg";
+import slide1Bg from "@/assets/hero-slide-1.png";
+import slide2Bg from "@/assets/hero-slide-2.png";
+import slide3Bg from "@/assets/hero-slide-3.png";
 
 // ─── Slide data (single source of truth) ─────────────────────────────────────
 
