@@ -305,11 +305,9 @@ export function HeroCarousel() {
             >
               {slide.heading}
             </h1>
-            <div className="mt-5 max-w-2xl">
-              <p className="text-base leading-relaxed text-white/90 md:text-lg">
-                {slide.description}
-              </p>
-            </div>
+            <p className="mt-5 text-base leading-relaxed text-white/90 md:text-lg">
+              {slide.description}
+            </p>
           </div>
 
           {/* CTA buttons — always visible, don't animate per-slide */}
