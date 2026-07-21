@@ -74,6 +74,54 @@ const SLIDES: Slide[] = [
       },
     ],
   },
+  {
+    bg: slide1Bg,
+    heading: "AI-Driven Transaction Processing",
+    description:
+      "Create, validate, track, and manage ERP transactions using an AI-powered assistant that streamlines complex business processes. Minimize manual effort, improve accuracy, ensure compliance, and gain real-time visibility into every transaction across your enterprise.",
+    stats: [
+      { value: "90+", label: "Transaction Use Cases" },
+      { value: "21+", label: "Business Functions" },
+      { value: "10+", label: "Enterprise Workflows" },
+      {
+        value: <CheckCircle2 className="h-6 w-6 text-white" />,
+        label: "End-to-End Transaction Management",
+      },
+    ],
+  },
+  {
+    bg: slide2Bg,
+    heading: "AI-Powered Data Insights",
+    description:
+      "Unify data from ERP systems, databases, documents, and spreadsheets into a single trusted source. Leverage AI-powered analytics, real-time dashboards, KPI reporting, and predictive insights to make faster, smarter, and more informed business decisions with complete visibility and governance.",
+    stats: [
+      { value: "100+", label: "Data Connectors" },
+      { value: "21+", label: "Business Functions" },
+      { value: "10+", label: "Analytics Modules" },
+      {
+        value: <CheckCircle2 className="h-6 w-6 text-white" />,
+        label: "Always-On Decision Intelligence Assistant",
+      },
+    ],
+  },
+  {
+    bg: slide3Bg,
+    heading: "Smart AI Approval Assistant",
+    description:
+      "Replace manual approval processes with intelligent workflows that automate routing, notifications, and decision-making. Reduce approval cycle times, strengthen governance, ensure compliance, and enable secure approvals anytime, anywhere through Microsoft Teams, Outlook, and the web.",
+    stats: [
+      { value: "100+", label: "Approval Scenarios" },
+      { value: "21+", label: "Business Functions" },
+      {
+        value: <CheckCircle2 className="h-6 w-6 text-white" />,
+        label: "Real-Time Workflow Visibility",
+      },
+      {
+        value: <CheckCircle2 className="h-6 w-6 text-white" />,
+        label: "Always-On AI Approval Assistant",
+      },
+    ],
+  },
 ];
 
 const AUTOPLAY_MS = 5500;

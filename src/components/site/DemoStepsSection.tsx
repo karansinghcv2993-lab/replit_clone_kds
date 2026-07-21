@@ -14,10 +14,10 @@
  */
 
 import { useEffect, useRef, useState } from "react";
-import step1Img from "@/assets/demo-step-1.png";
-import step2Img from "@/assets/demo-step-2.png";
-import step3Img from "@/assets/demo-step-3.png";
-import step4Img from "@/assets/demo-step-4.png";
+import step1Img from "@/assets/demo-step-1-new.png";
+import step2Img from "@/assets/demo-step-2-new.png";
+import step3Img from "@/assets/demo-step-3-new.png";
+import step4Img from "@/assets/demo-step-4-new.png";
 
 // ─── Step data (source of truth: attached Word document) ──────────────────────
 
