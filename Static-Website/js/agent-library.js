@@ -178,6 +178,61 @@
     window.addEventListener('resize', setStickyTop, { passive: true });
   }
 
+  /* ── Solutions section ───────────────────────────────────── */
+  var SVG_ZAP = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>';
+  var SVG_CLOCK = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+
+  function openSolutionModal(solution) {
+    var modal = document.getElementById('solution-modal');
+    if (!modal) return;
+    document.getElementById('sol-modal-steps').textContent = solution.steps + ' steps';
+    document.getElementById('sol-modal-title').textContent = solution.title;
+    document.getElementById('sol-modal-desc').textContent = solution.desc;
+    document.getElementById('sol-modal-automation').textContent = solution.automation;
+    document.getElementById('sol-modal-outcome').textContent = solution.outcome;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSolutionModal() {
+    var modal = document.getElementById('solution-modal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  function initSolutions() {
+    var grid = document.getElementById('solutions-grid');
+    if (!grid) return;
+
+    SOLUTIONS.forEach(function (sol) {
+      var btn = document.createElement('button');
+      btn.className = 'group flex h-full flex-col rounded-xl border border-border bg-white p-6 text-left transition hover:-translate-y-0.5 hover:border-brand hover:shadow-lg w-full';
+      btn.innerHTML =
+        '<div class="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-2.5 py-1 text-xs font-semibold text-brand">' + sol.steps + ' steps</div>' +
+        '<h3 class="text-base font-bold leading-snug text-foreground">' + escHtml(sol.title) + '</h3>' +
+        '<p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-4">' + escHtml(sol.desc) + '</p>' +
+        '<div class="mt-4 flex items-center gap-3 border-t border-border pt-3 text-xs">' +
+          '<span class="inline-flex items-center gap-1 font-semibold text-foreground">' + SVG_ZAP + ' ' + escHtml(sol.automation) + '</span>' +
+          '<span class="text-muted-foreground">·</span>' +
+          '<span class="inline-flex items-center gap-1 text-muted-foreground">' + SVG_CLOCK + ' ' + escHtml(sol.outcome) + '</span>' +
+        '</div>';
+      btn.addEventListener('click', function () { openSolutionModal(sol); });
+      grid.appendChild(btn);
+    });
+
+    var viewAllBtn = document.getElementById('solutions-view-all');
+    if (viewAllBtn) {
+      viewAllBtn.addEventListener('click', function () {
+        alert('Contact Key Dynamics Solutions to view all AI solutions:\nhttps://keydynamicssolutions.com/');
+      });
+    }
+
+    var solCloseBtn = document.getElementById('sol-modal-close');
+    var solBackdrop = document.getElementById('sol-modal-backdrop');
+    if (solCloseBtn) solCloseBtn.addEventListener('click', closeSolutionModal);
+    if (solBackdrop) solBackdrop.addEventListener('click', closeSolutionModal);
+  }
+
   /* ── Boot ────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     renderFilterButtons();
@@ -185,13 +240,14 @@
     renderGrid();
     initSearch();
     initStickyFilter();
+    initSolutions();
 
     var closeBtn = document.getElementById('demo-modal-close');
     var backdrop = document.getElementById('demo-modal-backdrop');
     if (closeBtn) closeBtn.addEventListener('click', closeDemoModal);
     if (backdrop) backdrop.addEventListener('click', closeDemoModal);
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeDemoModal();
+      if (e.key === 'Escape') { closeDemoModal(); closeSolutionModal(); }
     });
   });
 

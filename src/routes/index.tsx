@@ -4,7 +4,6 @@ import { HeroSection } from "@/components/site/HeroSection";
 import { HighlightsSection } from "@/components/site/HighlightsSection";
 import { AICoWorkerSection } from "@/components/site/AICoWorkerSection";
 import { DemoStepsSection } from "@/components/site/DemoStepsSection";
-import { SolutionsSection } from "@/components/site/SolutionsSection";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -36,7 +35,6 @@ function Home() {
       <HighlightsSection />
       <AICoWorkerSection />
       <DemoStepsSection />
-      <SolutionsSection />
       <SiteFooter />
       <Toaster position="bottom-right" />
     </div>

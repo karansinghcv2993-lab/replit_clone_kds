@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { CatalogueSection } from "@/components/site/CatalogueSection";
+import { SolutionsSection } from "@/components/site/SolutionsSection";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -23,6 +24,7 @@ function AgentLibraryPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <CatalogueSection />
+      <SolutionsSection />
       <SiteFooter />
       <Toaster position="bottom-right" />
     </div>

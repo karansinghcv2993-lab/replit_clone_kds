@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { AGENTS, type Agent, type AgentCategory } from "@/data/catalogue";
 import { Sparkles, PlayCircle, ArrowRight, CheckCircle2 } from "lucide-react";
 import { DemoModal } from "./DemoModal";
-import { toast } from "sonner";
+import { Link } from "@tanstack/react-router";
 
 type TabId = "o2c" | "p2p" | "sc" | "cf" | "d365ba";
 
@@ -93,16 +93,12 @@ export function HighlightsSection() {
             </span>{" "}
             with live video demos — {tab.label}
           </p>
-          <button
-            onClick={() =>
-              toast("Scroll down to the Full Agent Library", {
-                description: tab.totalHint,
-              })
-            }
+          <Link
+            to="/agent-library"
             className="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline"
           >
             {tab.totalHint} <ArrowRight className="h-4 w-4" />
-          </button>
+          </Link>
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

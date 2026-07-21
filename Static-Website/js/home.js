@@ -366,9 +366,9 @@
       tabBar.appendChild(btn);
     });
 
-    // Browse full catalogue button
+    // Browse full catalogue button — navigates to the Agent Library page
     var browseBtn = document.getElementById('highlights-browse-btn');
-    if (browseBtn) browseBtn.addEventListener('click', function () { scrollTo('catalogue'); });
+    if (browseBtn) browseBtn.addEventListener('click', function () { window.location.href = 'agent-library.html'; });
 
     updateTabStyles();
     renderHighlightCards();
@@ -652,7 +652,6 @@
     initHighlights();
     initWheel();
     initDemoSteps();
-    initSolutions();
   });
 
 })();
