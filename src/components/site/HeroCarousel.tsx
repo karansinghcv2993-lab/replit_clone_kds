@@ -339,12 +339,6 @@ export function HeroCarousel() {
         </div>
       ))}
 
-      {/* ── Dark overlay for text readability (disabled for slides with their own dark bg) ── */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-[2] transition-opacity duration-700"
-        style={{ background: "rgba(3,14,89,0.68)", opacity: slide.overlay ? 1 : 0 }}
-      />
 
       {/* ── Content ── */}
       <div className="relative z-10 mx-auto flex w-full max-w-screen-2xl flex-1 flex-col px-6 pt-10 md:px-10 md:pt-14">
