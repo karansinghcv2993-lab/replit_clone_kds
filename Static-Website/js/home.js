@@ -37,6 +37,7 @@
   var SLIDES = [
     {
       bg: 'assets/images/hero-slide-1.jpg',
+      overlay: true,
       heading: 'Digital Transaction Management Assistant',
       description: 'Your AI-powered digital assistant for creating, validating, tracking, and managing ERP transactions with speed, accuracy, and intelligent automation. Streamline complex business processes, reduce manual effort, ensure compliance, and gain real-time visibility across every transaction.',
       stats: [
@@ -48,6 +49,7 @@
     },
     {
       bg: 'assets/images/hero-slide-2.jpg',
+      overlay: true,
       heading: 'From ERP Data to Decision Intelligence',
       description: 'Transform scattered ERP data into meaningful business intelligence with an AI-powered digital assistant. Unify data from ERP systems, databases, documents, and spreadsheets into a single trusted source, enabling real-time dashboards, KPI reporting, governance, and decision-ready insights for faster, smarter business decisions.',
       stats: [
@@ -59,6 +61,7 @@
     },
     {
       bg: 'assets/images/hero-slide-3.jpg',
+      overlay: true,
       heading: 'AI-Powered Approval Automation',
       description: 'Transform manual approval workflows into intelligent, automated processes with an AI-powered digital assistant. Reduce approval cycle times, strengthen governance, and enable secure approvals anytime, anywhere.',
       stats: [
@@ -69,7 +72,8 @@
       ]
     },
     {
-      bg: 'assets/images/hero-slide-1.jpg',
+      bg: 'assets/images/hero-slide-4.png',
+      overlay: false,
       heading: 'AI-Driven Transaction Processing',
       description: 'Create, validate, track, and manage ERP transactions using an AI-powered assistant that streamlines complex business processes. Minimize manual effort, improve accuracy, ensure compliance, and gain real-time visibility into every transaction across your enterprise.',
       stats: [
@@ -80,7 +84,8 @@
       ]
     },
     {
-      bg: 'assets/images/hero-slide-2.jpg',
+      bg: 'assets/images/hero-slide-5.png',
+      overlay: false,
       heading: 'AI-Powered Data Insights',
       description: 'Unify data from ERP systems, databases, documents, and spreadsheets into a single trusted source. Leverage AI-powered analytics, real-time dashboards, KPI reporting, and predictive insights to make faster, smarter, and more informed business decisions with complete visibility and governance.',
       stats: [
@@ -91,7 +96,8 @@
       ]
     },
     {
-      bg: 'assets/images/hero-slide-3.jpg',
+      bg: 'assets/images/hero-slide-6.png',
+      overlay: false,
       heading: 'Smart AI Approval Assistant',
       description: 'Replace manual approval processes with intelligent workflows that automate routing, notifications, and decision-making. Reduce approval cycle times, strengthen governance, ensure compliance, and enable secure approvals anytime, anywhere through Microsoft Teams, Outlook, and the web.',
       stats: [
@@ -200,6 +206,12 @@
         }
       });
 
+      // Toggle overlay: hide it for slides with their own dark background
+      var overlay = document.getElementById('hero-overlay');
+      if (overlay) {
+        overlay.style.opacity = SLIDES[idx].overlay ? '1' : '0';
+      }
+
       // Update dots
       dots.forEach(function (dot, i) {
         dot.style.width = i === idx ? '2rem' : '0.625rem';
@@ -265,6 +277,12 @@
     bgLayers.forEach(function (layer, i) {
       layer.style.opacity = i === 0 ? '1' : '0';
     });
+
+    // Init overlay for the first slide
+    var overlay = document.getElementById('hero-overlay');
+    if (overlay) {
+      overlay.style.opacity = SLIDES[0].overlay ? '1' : '0';
+    }
 
     // Init text
     renderHeroStats(0, true);

@@ -10,6 +10,9 @@ import { ChevronLeft, ChevronRight, CheckCircle2, BookOpen, ArrowLeft, Sparkles 
 import slide1Bg from "@/assets/hero-slide-1.png";
 import slide2Bg from "@/assets/hero-slide-2.png";
 import slide3Bg from "@/assets/hero-slide-3.png";
+import slide4Bg from "@/assets/hero-slide-4.png";
+import slide5Bg from "@/assets/hero-slide-5.png";
+import slide6Bg from "@/assets/hero-slide-6.png";
 
 // ─── Slide data (single source of truth) ─────────────────────────────────────
 
@@ -20,6 +23,7 @@ interface Stat {
 
 interface Slide {
   bg: string;
+  overlay: boolean;
   heading: string;
   description: string;
   stats: Stat[];
@@ -28,6 +32,7 @@ interface Slide {
 const SLIDES: Slide[] = [
   {
     bg: slide1Bg,
+    overlay: true,
     heading: "Digital Transaction Management Assistant",
     description:
       "Your AI-powered digital assistant for creating, validating, tracking, and managing ERP transactions with speed, accuracy, and intelligent automation. Streamline complex business processes, reduce manual effort, ensure compliance, and gain real-time visibility across every transaction.",
@@ -43,6 +48,7 @@ const SLIDES: Slide[] = [
   },
   {
     bg: slide2Bg,
+    overlay: true,
     heading: "From ERP Data to Decision Intelligence",
     description:
       "Transform scattered ERP data into meaningful business intelligence with an AI-powered digital assistant. Unify data from ERP systems, databases, documents, and spreadsheets into a single trusted source, enabling real-time dashboards, KPI reporting, governance, and decision-ready insights for faster, smarter business decisions.",
@@ -58,6 +64,7 @@ const SLIDES: Slide[] = [
   },
   {
     bg: slide3Bg,
+    overlay: true,
     heading: "AI-Powered Approval Automation",
     description:
       "Transform manual approval workflows into intelligent, automated processes with an AI-powered digital assistant. Reduce approval cycle times, strengthen governance, and enable secure approvals anytime, anywhere.",
@@ -75,7 +82,8 @@ const SLIDES: Slide[] = [
     ],
   },
   {
-    bg: slide1Bg,
+    bg: slide4Bg,
+    overlay: false,
     heading: "AI-Driven Transaction Processing",
     description:
       "Create, validate, track, and manage ERP transactions using an AI-powered assistant that streamlines complex business processes. Minimize manual effort, improve accuracy, ensure compliance, and gain real-time visibility into every transaction across your enterprise.",
@@ -90,7 +98,8 @@ const SLIDES: Slide[] = [
     ],
   },
   {
-    bg: slide2Bg,
+    bg: slide5Bg,
+    overlay: false,
     heading: "AI-Powered Data Insights",
     description:
       "Unify data from ERP systems, databases, documents, and spreadsheets into a single trusted source. Leverage AI-powered analytics, real-time dashboards, KPI reporting, and predictive insights to make faster, smarter, and more informed business decisions with complete visibility and governance.",
@@ -105,7 +114,8 @@ const SLIDES: Slide[] = [
     ],
   },
   {
-    bg: slide3Bg,
+    bg: slide6Bg,
+    overlay: false,
     heading: "Smart AI Approval Assistant",
     description:
       "Replace manual approval processes with intelligent workflows that automate routing, notifications, and decision-making. Reduce approval cycle times, strengthen governance, ensure compliance, and enable secure approvals anytime, anywhere through Microsoft Teams, Outlook, and the web.",
@@ -329,11 +339,11 @@ export function HeroCarousel() {
         </div>
       ))}
 
-      {/* ── Dark overlay for text readability ── */}
+      {/* ── Dark overlay for text readability (disabled for slides with their own dark bg) ── */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-[2]"
-        style={{ background: "rgba(3,14,89,0.68)" }}
+        className="pointer-events-none absolute inset-0 z-[2] transition-opacity duration-700"
+        style={{ background: "rgba(3,14,89,0.68)", opacity: slide.overlay ? 1 : 0 }}
       />
 
       {/* ── Content ── */}
