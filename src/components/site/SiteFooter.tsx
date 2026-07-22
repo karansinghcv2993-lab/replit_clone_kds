@@ -79,16 +79,6 @@ export function SiteFooter() {
             >
               Visit KDS Website →
             </a>
-
-            {/* Copyright */}
-            <div className="mt-10 space-y-1 border-t border-white/10 pt-6">
-              <p className="text-xs text-hero-muted">
-                © 2026 Key Dynamics Solutions Pvt. Ltd. All Rights Reserved.
-              </p>
-              <p className="text-xs text-hero-muted">
-                KDS ERP Crew™ is a product of Key Dynamics Solutions.
-              </p>
-            </div>
           </div>
 
           {/* ── Right: Connect ── */}
@@ -115,6 +105,17 @@ export function SiteFooter() {
           </div>
 
         </div>
+
+        {/* ── Copyright (full-width, left-aligned, below both columns) ── */}
+        <div className="mt-10 space-y-1 border-t border-white/10 pt-6">
+          <p className="text-xs text-hero-muted">
+            © 2026 Key Dynamics Solutions Pvt. Ltd. All Rights Reserved.
+          </p>
+          <p className="text-xs text-hero-muted">
+            KDS ERP Crew™ is a product of Key Dynamics Solutions.
+          </p>
+        </div>
+
       </div>
     </footer>
   );
