@@ -82,7 +82,7 @@ export function SiteFooter() {
           </div>
 
           {/* ── Right: Connect ── */}
-          <div className="flex flex-col gap-4 md:items-end md:text-right">
+          <div className="flex flex-col gap-4 md:items-end md:text-right md:self-end">
             <h3 className="text-base font-bold text-hero-foreground">Connect With KDS</h3>
             <p className="max-w-xs text-sm leading-relaxed text-hero-muted md:text-right">
               Stay connected for the latest updates, AI innovations, ERP insights, and digital transformation stories.
