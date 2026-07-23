@@ -1,0 +1,1 @@
+- [Imported package installation](package-installation.md) — Bun setup can rewrite lockfiles or resolve newer tooling versions; recheck metadata after installing.

@@ -7,12 +7,12 @@
 
 import { useEffect, useLayoutEffect, useRef, useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight, CheckCircle2, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
-import slide1Bg from "@/assets/hero-slide-1.png";
-import slide2Bg from "@/assets/hero-slide-2.png";
-import slide3Bg from "@/assets/hero-slide-3.png";
-import slide4Bg from "@/assets/hero-slide-4.png";
-import slide5Bg from "@/assets/hero-slide-5.png";
-import slide6Bg from "@/assets/hero-slide-6.png";
+import slide1Bg from "../../../attached_assets/Picture_1_1784827309966.png";
+import slide2Bg from "../../../attached_assets/Picture_2_1784827309966.png";
+import slide3Bg from "../../../attached_assets/Picture_3_1784827309966.png";
+import slide4Bg from "../../../attached_assets/Picture_4_1784827309967.png";
+import slide5Bg from "../../../attached_assets/Picture_5_1784827309967.png";
+import slide6Bg from "../../../attached_assets/Picture_6_1784827309967.png";
 
 // ─── Slide data (single source of truth) ─────────────────────────────────────
 
@@ -35,7 +35,7 @@ const SLIDES: Slide[] = [
     overlay: true,
     heading: "Digital Transaction Management Assistant",
     description:
-      "Your AI-powered digital assistant for creating, validating, tracking, and managing ERP transactions with speed, accuracy, and intelligent automation. Streamline complex business processes, reduce manual effort, ensure compliance, and gain real-time visibility across every transaction.",
+      "Transform ERP transactions into intelligent, AI-driven workflows that improve visibility, accelerate approvals, and streamline business operations.",
     stats: [
       { value: "90+", label: "Transaction Use Cases" },
       { value: "21+", label: "Business Functions" },
@@ -51,7 +51,7 @@ const SLIDES: Slide[] = [
     overlay: true,
     heading: "From ERP Data to Decision Intelligence",
     description:
-      "Transform scattered ERP data into meaningful business intelligence with an AI-powered digital assistant. Unify data from ERP systems, databases, documents, and spreadsheets into a single trusted source, enabling real-time dashboards, KPI reporting, governance, and decision-ready insights for faster, smarter business decisions.",
+      "Turn real-time ERP data into actionable insights with AI-powered analytics, predictive intelligence, and smarter business decisions.",
     stats: [
       { value: "100+", label: "Data Connectors" },
       { value: "21+", label: "Business Functions" },
@@ -67,7 +67,7 @@ const SLIDES: Slide[] = [
     overlay: true,
     heading: "AI-Powered Approval Automation",
     description:
-      "Transform manual approval workflows into intelligent, automated processes with an AI-powered digital assistant. Reduce approval cycle times, strengthen governance, and enable secure approvals anytime, anywhere.",
+      "Automate approval workflows across your organization with intelligent routing, real-time notifications, and secure approvals from anywhere.",
     stats: [
       { value: "100+", label: "Approval Scenarios" },
       { value: "21+", label: "Business Functions" },
@@ -86,7 +86,7 @@ const SLIDES: Slide[] = [
     overlay: false,
     heading: "AI-Driven Transaction Processing",
     description:
-      "Create, validate, track, and manage ERP transactions using an AI-powered assistant that streamlines complex business processes. Minimize manual effort, improve accuracy, ensure compliance, and gain real-time visibility into every transaction across your enterprise.",
+      "Accelerate transaction processing with AI-powered validation, automation, and exception handling for faster, more accurate operations.",
     stats: [
       { value: "90+", label: "Transaction Use Cases" },
       { value: "21+", label: "Business Functions" },
@@ -102,7 +102,7 @@ const SLIDES: Slide[] = [
     overlay: false,
     heading: "AI-Powered Data Insights",
     description:
-      "Unify data from ERP systems, databases, documents, and spreadsheets into a single trusted source. Leverage AI-powered analytics, real-time dashboards, KPI reporting, and predictive insights to make faster, smarter, and more informed business decisions with complete visibility and governance.",
+      "Unlock meaningful business intelligence with AI-driven analytics, interactive dashboards, and real-time performance monitoring.",
     stats: [
       { value: "100+", label: "Data Connectors" },
       { value: "21+", label: "Business Functions" },
@@ -118,7 +118,7 @@ const SLIDES: Slide[] = [
     overlay: false,
     heading: "Smart AI Approval Assistant",
     description:
-      "Replace manual approval processes with intelligent workflows that automate routing, notifications, and decision-making. Reduce approval cycle times, strengthen governance, ensure compliance, and enable secure approvals anytime, anywhere through Microsoft Teams, Outlook, and the web.",
+      "Empower teams with an intelligent approval assistant that delivers contextual recommendations, instant notifications, and seamless ERP approvals.",
     stats: [
       { value: "100+", label: "Approval Scenarios" },
       { value: "21+", label: "Business Functions" },
