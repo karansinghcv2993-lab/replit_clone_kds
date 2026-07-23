@@ -1,18 +1,25 @@
 /**
- * HeroCarousel — animated 3-slide carousel for the hero section.
+ * HeroCarousel — animated 6-slide carousel for the hero section.
  *
  * All slide content is driven by the SLIDES config array.
  * Transitions: crossfade background + slide-up text, 5 s autoplay, infinite loop.
  */
 
 import { useEffect, useLayoutEffect, useRef, useState, useCallback } from "react";
-import { ChevronLeft, ChevronRight, CheckCircle2, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
-import slide1Bg from "../../../attached_assets/Picture_1_1784827309966.png";
-import slide2Bg from "../../../attached_assets/Picture_2_1784827309966.png";
-import slide3Bg from "../../../attached_assets/Picture_3_1784827309966.png";
-import slide4Bg from "../../../attached_assets/Picture_4_1784827309967.png";
-import slide5Bg from "../../../attached_assets/Picture_5_1784827309967.png";
-import slide6Bg from "../../../attached_assets/Picture_6_1784827309967.png";
+import {
+  ChevronLeft,
+  ChevronRight,
+  CheckCircle2,
+  BookOpen,
+  ArrowLeft,
+  Sparkles,
+} from "lucide-react";
+import slide1Bg from "@/assets/hero-slide-1.png";
+import slide2Bg from "@/assets/hero-slide-2.png";
+import slide3Bg from "@/assets/hero-slide-3.png";
+import slide4Bg from "@/assets/hero-slide-4.png";
+import slide5Bg from "@/assets/hero-slide-5.png";
+import slide6Bg from "@/assets/hero-slide-6.png";
 
 // ─── Slide data (single source of truth) ─────────────────────────────────────
 
@@ -198,14 +205,20 @@ function useCountUp(target: number, active: boolean, duration = 1200): number {
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
-function StatTile({ value, label, visible }: { value: React.ReactNode; label: string; visible: boolean }) {
+function StatTile({
+  value,
+  label,
+  visible,
+}: {
+  value: React.ReactNode;
+  label: string;
+  visible: boolean;
+}) {
   // Determine if this tile has a numeric value we can animate
   const parsed = typeof value === "string" ? parseStatValue(value) : null;
   const count = useCountUp(parsed?.num ?? 0, visible && parsed !== null);
 
-  const displayValue = parsed
-    ? `${count}${parsed.suffix}`
-    : value;
+  const displayValue = parsed ? `${count}${parsed.suffix}` : value;
 
   return (
     <div
@@ -286,16 +299,13 @@ export function HeroCarousel() {
     const header = document.querySelector("header");
     if (!header) return;
 
-    const apply = (h: number) =>
-      document.documentElement.style.setProperty("--header-h", `${h}px`);
+    const apply = (h: number) => document.documentElement.style.setProperty("--header-h", `${h}px`);
 
     // Set immediately so the first paint is correct
     apply(header.getBoundingClientRect().height);
 
     const ro = new ResizeObserver(([entry]) => {
-      const h =
-        entry.borderBoxSize?.[0]?.blockSize ??
-        entry.contentRect.height;
+      const h = entry.borderBoxSize?.[0]?.blockSize ?? entry.contentRect.height;
       apply(h);
     });
     ro.observe(header);
@@ -326,11 +336,11 @@ export function HeroCarousel() {
           <img
             src={s.bg}
             alt=""
-            width={1920}
-            height={960}
+            width={5197}
+            height={2079}
             loading={i === 0 ? "eager" : "lazy"}
             decoding="async"
-            className="h-full w-full object-cover object-top"
+            className="hero-background-image h-full w-full object-cover object-top"
             style={{
               transform: i === current ? "scale(1.03)" : "scale(1)",
               transition: "transform 6s ease-out, opacity 0.7s ease",
@@ -339,31 +349,27 @@ export function HeroCarousel() {
         </div>
       ))}
 
-
       {/* ── Content ── */}
       <div className="relative z-10 mx-auto flex w-full max-w-screen-2xl flex-1 flex-col px-6 pt-10 md:px-10 md:pt-14">
-        <div className="mt-14 flex flex-1 flex-col justify-end max-w-5xl md:mt-20 pb-[85px]">
-
+        <div className="mt-14 flex max-w-5xl flex-1 flex-col justify-end gap-10 pb-[85px] md:mt-20 md:gap-12">
           {/* Heading + description */}
           <div
-            className="mb-10 md:mb-[70px] transition-all duration-300"
+            className="flex flex-col gap-10 transition-all duration-300 md:gap-12"
             style={{
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? "translateY(0)" : "translateY(16px)",
             }}
           >
-            <h1
-              className="font-bold leading-[1.05] tracking-tight text-[2.55rem] md:text-[3.1875rem] text-white"
-            >
+            <h1 className="max-w-[20ch] min-h-[2.1em] font-bold leading-[1.05] tracking-tight text-[2.55rem] text-white md:max-w-[24ch] md:text-[3.1875rem]">
               {slide.heading}
             </h1>
-            <p className="mt-[30px] text-base leading-relaxed text-white/90 md:text-lg">
+            <p className="min-h-[4.5em] max-w-[40ch] text-base leading-relaxed text-white/90 md:max-w-[52ch] md:text-lg">
               {slide.description}
             </p>
           </div>
 
           {/* CTA buttons — always visible, don't animate per-slide */}
-          <div className="mb-10 md:mb-[70px] flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={() => scrollTo("highlights")}
               className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground shadow-lg shadow-brand/20 transition hover:brightness-110"

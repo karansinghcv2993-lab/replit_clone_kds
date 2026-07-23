@@ -1,0 +1,60 @@
+Make changes to both replete and static website folder
+
+Please update the Hero Carousel with the following changes while preserving the existing layout, animations, transitions, responsiveness, counters, and overall design language.
+1. Replace Hero Images
+Replace the existing hero slider images with the six newly attached images, maintaining the order in which they are provided.
+Requirements:
+* Use one image per slide.
+* Preserve the existing image positioning and styling.
+* Maintain image quality and aspect ratio.
+* Ensure the subject of each image remains visible across desktop, tablet, and mobile.
+* Do not stretch or distort the images.
+* Preserve the current overlay and readability of the text.
+
+2. Update Hero Content
+Update the content of all six slides as follows.
+Slide 1
+Heading Digital Transaction Management Assistant
+Subheading Transform ERP transactions into intelligent, AI-driven workflows that improve visibility, accelerate approvals, and streamline business operations.
+
+Slide 2
+Heading From ERP Data to Decision Intelligence
+Subheading Turn real-time ERP data into actionable insights with AI-powered analytics, predictive intelligence, and smarter business decisions.
+
+Slide 3
+Heading AI-Powered Approval Automation
+Subheading Automate approval workflows across your organization with intelligent routing, real-time notifications, and secure approvals from anywhere.
+
+Slide 4
+Heading AI-Driven Transaction Processing
+Subheading Accelerate transaction processing with AI-powered validation, automation, and exception handling for faster, more accurate operations.
+
+Slide 5
+Heading AI-Powered Data Insights
+Subheading Unlock meaningful business intelligence with AI-driven analytics, interactive dashboards, and real-time performance monitoring.
+
+Slide 6
+Heading Smart AI Approval Assistant
+Subheading Empower teams with an intelligent approval assistant that delivers contextual recommendations, instant notifications, and seamless ERP approvals.
+
+3. Typography & Layout
+Maintain a consistent text layout across all six slides.
+Requirements:
+* Format every heading to occupy approximately two lines.
+* Format every subheading to occupy approximately three lines.
+* Ensure the heading and subheading widths are consistent across all slides.
+* Maintain a consistent vertical rhythm throughout the content.
+Use approximately the following spacing:
+* Heading → Subheading: 40–50px
+* Subheading → CTA Buttons: 40–50px
+* CTA Buttons → Statistic Cards: 40–50px
+Do not use arbitrary margins for individual elements. Use a consistent spacing system (Flex/Grid with controlled gaps) so all slides have identical content alignment.
+
+Objective
+The six hero slides should feel visually identical in structure, with only the image and text changing. Each slide should have:
+* Consistent image placement
+* Two-line heading
+* Three-line subheading
+* Even vertical spacing
+* Identical alignment of buttons and statistic cards
+The final result should look polished, balanced, and consistent across all six hero slides while remaining fully responsive.

@@ -52,7 +52,7 @@ system UI font (San Francisco on macOS, Segoe UI on Windows).
 
 FEATURES INCLUDED
 -----------------
-✓ Hero carousel with 3 slides, auto-play, crossfade backgrounds, count-up statistics
+✓ Hero carousel with 6 slides, auto-play, crossfade backgrounds, count-up statistics
 ✓ Agent Highlights section with O2C / P2P / Supply Chain / Platform / D365 tabs
 ✓ Demo modals for featured agents (video placeholder)
 ✓ AI Co-Worker infinite wheel-picker animation

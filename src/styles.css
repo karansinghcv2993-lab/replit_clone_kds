@@ -110,3 +110,13 @@
     -webkit-font-smoothing: antialiased;
   }
 }
+
+.hero-background-image {
+  object-position: center top;
+}
+
+@media (max-width: 767px) {
+  .hero-background-image {
+    object-position: 75% top;
+  }
+}
