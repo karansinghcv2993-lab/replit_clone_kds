@@ -42,6 +42,27 @@
       flex-direction: column;
       gap: 40px;
     }
+    .hero-controls {
+      width: fit-content;
+      max-width: 100%;
+      min-width: 0;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .hero-cta-row {
+      width: fit-content;
+      max-width: 100%;
+    }
+    .hero-stats-grid {
+      width: 100%;
+      min-width: 0;
+      contain: inline-size;
+    }
+    .hero-stats-grid > * {
+      min-width: 0;
+    }
     .hero-background-image { object-position: center top; }
     @media (max-width: 767px) {
       #hero-heading { max-width: 20ch; }
@@ -50,7 +71,8 @@
     }
     @media (min-width: 768px) {
       .hero-content-stack,
-      .hero-copy {
+      .hero-copy,
+      .hero-controls {
         gap: 48px;
       }
     }
@@ -143,7 +165,8 @@
         <!-- Heading + description -->
         <div id="hero-text" class="hero-copy transition-all duration-300" style="opacity:1;transform:translateY(0)">
           <h1 id="hero-heading" class="font-bold leading-[1.05] tracking-tight text-[2.55rem] md:text-[3.1875rem] text-white">
-            Digital Transaction Management Assistant
+            <span class="block">Digital Transaction</span>
+            <span class="block">Management Assistant</span>
           </h1>
           <p id="hero-desc" class="text-base leading-relaxed text-white/90 md:text-lg">
             Transform ERP transactions into intelligent, AI-driven workflows that improve visibility, accelerate approvals, and streamline business operations.
@@ -151,7 +174,8 @@
         </div>
 
         <!-- CTA buttons -->
-        <div class="flex flex-wrap items-center gap-3">
+        <div class="hero-controls">
+        <div class="hero-cta-row flex flex-wrap items-center gap-3">
           <button id="hero-btn-highlights"
             class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-brand-foreground shadow-lg transition hover:brightness-110"
             style="background-color:#2ababe">
@@ -173,7 +197,8 @@
         </div>
 
         <!-- Stats grid (populated by JS) -->
-        <div id="hero-stats" class="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"></div>
+        <div id="hero-stats" class="hero-stats-grid grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"></div>
+        </div>
       </div>
     </div>
 

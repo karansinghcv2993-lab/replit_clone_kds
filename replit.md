@@ -31,4 +31,4 @@ src/
 
 ## User preferences
 
-_None recorded yet._
+- Update both the React app and the `Static-Website` folder whenever a feature or visual change applies to both.

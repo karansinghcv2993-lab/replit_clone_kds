@@ -31,7 +31,7 @@ interface Stat {
 interface Slide {
   bg: string;
   overlay: boolean;
-  heading: string;
+  heading: readonly [string, string];
   description: string;
   stats: Stat[];
 }
@@ -40,7 +40,7 @@ const SLIDES: Slide[] = [
   {
     bg: slide1Bg,
     overlay: true,
-    heading: "Digital Transaction Management Assistant",
+    heading: ["Digital Transaction", "Management Assistant"],
     description:
       "Transform ERP transactions into intelligent, AI-driven workflows that improve visibility, accelerate approvals, and streamline business operations.",
     stats: [
@@ -56,7 +56,7 @@ const SLIDES: Slide[] = [
   {
     bg: slide2Bg,
     overlay: true,
-    heading: "From ERP Data to Decision Intelligence",
+    heading: ["From ERP Data to", "Decision Intelligence"],
     description:
       "Turn real-time ERP data into actionable insights with AI-powered analytics, predictive intelligence, and smarter business decisions.",
     stats: [
@@ -72,7 +72,7 @@ const SLIDES: Slide[] = [
   {
     bg: slide3Bg,
     overlay: true,
-    heading: "AI-Powered Approval Automation",
+    heading: ["AI-Powered Approval", "Automation"],
     description:
       "Automate approval workflows across your organization with intelligent routing, real-time notifications, and secure approvals from anywhere.",
     stats: [
@@ -91,7 +91,7 @@ const SLIDES: Slide[] = [
   {
     bg: slide4Bg,
     overlay: false,
-    heading: "AI-Driven Transaction Processing",
+    heading: ["AI-Driven Transaction", "Processing"],
     description:
       "Accelerate transaction processing with AI-powered validation, automation, and exception handling for faster, more accurate operations.",
     stats: [
@@ -107,7 +107,7 @@ const SLIDES: Slide[] = [
   {
     bg: slide5Bg,
     overlay: false,
-    heading: "AI-Powered Data Insights",
+    heading: ["AI-Powered Data", "Insights"],
     description:
       "Unlock meaningful business intelligence with AI-driven analytics, interactive dashboards, and real-time performance monitoring.",
     stats: [
@@ -123,7 +123,7 @@ const SLIDES: Slide[] = [
   {
     bg: slide6Bg,
     overlay: false,
-    heading: "Smart AI Approval Assistant",
+    heading: ["Smart AI Approval", "Assistant"],
     description:
       "Empower teams with an intelligent approval assistant that delivers contextual recommendations, instant notifications, and seamless ERP approvals.",
     stats: [
@@ -222,7 +222,7 @@ function StatTile({
 
   return (
     <div
-      className="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur transition-all duration-500"
+      className="min-w-0 rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur transition-all duration-500"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(12px)",
@@ -360,53 +360,62 @@ export function HeroCarousel() {
               transform: textVisible ? "translateY(0)" : "translateY(16px)",
             }}
           >
-            <h1 className="max-w-[20ch] min-h-[2.1em] font-bold leading-[1.05] tracking-tight text-[2.55rem] text-white md:max-w-[24ch] md:text-[3.1875rem]">
-              {slide.heading}
+            <h1 className="min-h-[2.1em] font-bold leading-[1.05] tracking-tight text-[2.55rem] text-white md:text-[3.1875rem]">
+              {slide.heading.map((line) => (
+                <span className="block" key={line}>
+                  {line}
+                </span>
+              ))}
             </h1>
             <p className="min-h-[4.5em] max-w-[40ch] text-base leading-relaxed text-white/90 md:max-w-[52ch] md:text-lg">
               {slide.description}
             </p>
           </div>
 
-          {/* CTA buttons — always visible, don't animate per-slide */}
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => scrollTo("highlights")}
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground shadow-lg shadow-brand/20 transition hover:brightness-110"
-            >
-              <Sparkles className="h-4 w-4" />
-              Agent Highlights
-            </button>
-            <button
-              onClick={() => scrollTo("catalogue")}
-              className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
-              style={{ backgroundColor: "#051895" }}
-            >
-              <BookOpen className="h-4 w-4" />
-              Complete AI Agent Catalogue
-            </button>
-            <a
-              href="https://keydynamicssolutions.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
-              style={{ backgroundColor: "#fba226" }}
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Key Dynamic Solutions
-            </a>
-          </div>
+          <div className="hero-controls flex min-w-0 w-fit max-w-full self-start flex-col gap-10 md:gap-12">
+            {/* CTA buttons — always visible, don't animate per-slide */}
+            <div className="flex w-fit max-w-full flex-wrap items-center gap-3">
+              <button
+                onClick={() => scrollTo("highlights")}
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground shadow-lg shadow-brand/20 transition hover:brightness-110"
+              >
+                <Sparkles className="h-4 w-4" />
+                Agent Highlights
+              </button>
+              <button
+                onClick={() => scrollTo("catalogue")}
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+                style={{ backgroundColor: "#051895" }}
+              >
+                <BookOpen className="h-4 w-4" />
+                Complete AI Agent Catalogue
+              </button>
+              <a
+                href="https://keydynamicssolutions.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+                style={{ backgroundColor: "#fba226" }}
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back to Key Dynamic Solutions
+              </a>
+            </div>
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-            {slide.stats.map((stat, i) => (
-              <StatTile
-                key={`${current}-${i}`}
-                value={stat.value}
-                label={stat.label}
-                visible={statsVisible}
-              />
-            ))}
+            {/* Stats grid — fills the exact CTA row width */}
+            <div
+              className="grid min-w-0 w-full grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"
+              style={{ contain: "inline-size" }}
+            >
+              {slide.stats.map((stat, i) => (
+                <StatTile
+                  key={`${current}-${i}`}
+                  value={stat.value}
+                  label={stat.label}
+                  visible={statsVisible}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

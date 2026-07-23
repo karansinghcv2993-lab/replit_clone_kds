@@ -38,7 +38,7 @@
     {
       bg: 'assets/images/hero-slide-1.png',
       overlay: true,
-      heading: 'Digital Transaction Management Assistant',
+      heading: ['Digital Transaction', 'Management Assistant'],
       description: 'Transform ERP transactions into intelligent, AI-driven workflows that improve visibility, accelerate approvals, and streamline business operations.',
       stats: [
         { value: '68+', label: 'Transaction Use Cases' },
@@ -50,7 +50,7 @@
     {
       bg: 'assets/images/hero-slide-2.png',
       overlay: true,
-      heading: 'From ERP Data to Decision Intelligence',
+      heading: ['From ERP Data to', 'Decision Intelligence'],
       description: 'Turn real-time ERP data into actionable insights with AI-powered analytics, predictive intelligence, and smarter business decisions.',
       stats: [
         { value: '100+', label: 'Data Connectors' },
@@ -62,7 +62,7 @@
     {
       bg: 'assets/images/hero-slide-3.png',
       overlay: true,
-      heading: 'AI-Powered Approval Automation',
+      heading: ['AI-Powered Approval', 'Automation'],
       description: 'Automate approval workflows across your organization with intelligent routing, real-time notifications, and secure approvals from anywhere.',
       stats: [
         { value: '100+', label: 'Approval Scenarios' },
@@ -74,7 +74,7 @@
     {
       bg: 'assets/images/hero-slide-4.png',
       overlay: false,
-      heading: 'AI-Driven Transaction Processing',
+      heading: ['AI-Driven Transaction', 'Processing'],
       description: 'Accelerate transaction processing with AI-powered validation, automation, and exception handling for faster, more accurate operations.',
       stats: [
         { value: '90+', label: 'Transaction Use Cases' },
@@ -86,7 +86,7 @@
     {
       bg: 'assets/images/hero-slide-5.png',
       overlay: false,
-      heading: 'AI-Powered Data Insights',
+      heading: ['AI-Powered Data', 'Insights'],
       description: 'Unlock meaningful business intelligence with AI-driven analytics, interactive dashboards, and real-time performance monitoring.',
       stats: [
         { value: '100+', label: 'Data Connectors' },
@@ -98,7 +98,7 @@
     {
       bg: 'assets/images/hero-slide-6.png',
       overlay: false,
-      heading: 'Smart AI Approval Assistant',
+      heading: ['Smart AI Approval', 'Assistant'],
       description: 'Empower teams with an intelligent approval assistant that delivers contextual recommendations, instant notifications, and seamless ERP approvals.',
       stats: [
         { value: '100+', label: 'Approval Scenarios' },
@@ -149,7 +149,7 @@
     statsEl.innerHTML = '';
     slide.stats.forEach(function (stat) {
       var tile = document.createElement('div');
-      tile.className = 'rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur transition-all duration-500';
+      tile.className = 'min-w-0 rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur transition-all duration-500';
       tile.style.opacity = visible ? '1' : '0';
       tile.style.transform = visible ? 'translateY(0)' : 'translateY(12px)';
 
@@ -193,7 +193,9 @@
       // Update heading/desc
       var heading = document.getElementById('hero-heading');
       var desc = document.getElementById('hero-desc');
-      if (heading) heading.textContent = SLIDES[idx].heading;
+      if (heading) heading.innerHTML = SLIDES[idx].heading.map(function (line) {
+        return '<span class="block">' + line + '</span>';
+      }).join('');
       if (desc) desc.textContent = SLIDES[idx].description;
 
       // Crossfade backgrounds
