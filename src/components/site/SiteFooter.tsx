@@ -109,10 +109,7 @@ export function SiteFooter() {
         {/* ── Copyright (full-width, left-aligned, below both columns) ── */}
         <div className="mt-10 space-y-1 border-t border-white/10 pt-6">
           <p className="text-xs text-hero-muted">
-            © 2026 Key Dynamics Solutions Pvt. Ltd. All Rights Reserved.
-          </p>
-          <p className="text-xs text-hero-muted">
-            KDS ERP Crew™ is a product of Key Dynamics Solutions.
+            © 2026 Key Dynamics Solutions Pvt. Ltd. All Rights Reserved. KDS ERP Crew™ is a product of Key Dynamics Solutions.
           </p>
         </div>
 
