@@ -68,16 +68,15 @@ const TRANSITIONS = STEPS.length - 1; // 3
 function StepCard({ step }: { step: Step }) {
   return (
     <div className="flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white md:flex-row">
-
       {/* ── Left panel — step illustration image ── */}
       {/*
         Mobile : full width, 52vw tall (shows the monitor comfortably).
-        Desktop: 46% wide, full card height; image is object-contain so the
+        Desktop: 60% wide, full card height; image is object-contain so the
                  whole monitor mockup is always visible.
         Background matches the warm cream tone of the step images.
       */}
       <div
-        className="relative flex h-[52vw] max-h-[340px] min-h-[180px] flex-shrink-0 items-center justify-center overflow-hidden md:h-auto md:max-h-none md:min-h-0 md:w-[46%]"
+        className="relative flex h-[52vw] max-h-[340px] min-h-[180px] flex-shrink-0 items-center justify-center overflow-hidden md:h-auto md:max-h-none md:min-h-0 md:w-[60%]"
         style={{ backgroundColor: "#ede8e1" }}
       >
         <img
@@ -124,10 +123,7 @@ function StepCard({ step }: { step: Step }) {
         </p>
 
         {/* Teal accent bar */}
-        <div
-          className="mt-6 h-1 w-10 rounded-full"
-          style={{ backgroundColor: "#2ababe" }}
-        />
+        <div className="mt-6 h-1 w-10 rounded-full" style={{ backgroundColor: "#2ababe" }} />
       </div>
     </div>
   );
@@ -152,8 +148,8 @@ export function DemoStepsSection() {
 
     const update = () => {
       const rect = el.getBoundingClientRect();
-      const scrolled = -rect.top;                                // px scrolled into section
-      const stickyRange = el.offsetHeight - window.innerHeight;  // total sticky scroll distance
+      const scrolled = -rect.top; // px scrolled into section
+      const stickyRange = el.offsetHeight - window.innerHeight; // total sticky scroll distance
       if (stickyRange <= 0) return;
 
       const raw = Math.max(0, Math.min(1, scrolled / stickyRange));
@@ -182,7 +178,7 @@ export function DemoStepsSection() {
    */
   const getCardStyle = (i: number): React.CSSProperties => {
     const DEPTH_SCALE = 0.027; // scale reduction per depth level
-    const DEPTH_SHIFT = -9;    // px translateY per depth level (peek-out effect)
+    const DEPTH_SHIFT = -9; // px translateY per depth level (peek-out effect)
 
     if (i === 0) {
       const depth = Math.min(TRANSITIONS, progress);
@@ -272,11 +268,7 @@ export function DemoStepsSection() {
                 height: "8px",
                 width: i === activeCard ? "32px" : "8px",
                 backgroundColor:
-                  i < activeCard
-                    ? "#2ababe"
-                    : i === activeCard
-                      ? "#051895"
-                      : "rgba(5,24,149,0.18)",
+                  i < activeCard ? "#2ababe" : i === activeCard ? "#051895" : "rgba(5,24,149,0.18)",
                 transition: "width 0.3s ease, background-color 0.3s ease",
               }}
             />
@@ -296,18 +288,14 @@ export function DemoStepsSection() {
             className="relative w-full max-w-4xl rounded-3xl shadow-2xl"
             style={{ height: "min(400px, calc(100dvh - 250px))" }}
           >
-          {/* Clip wrapper: rounded-3xl matches the card corners so they aren't squared off */}
-          <div className="absolute inset-0 overflow-hidden rounded-3xl">
-            {STEPS.map((step, i) => (
-              <div
-                key={i}
-                className="absolute inset-0"
-                style={getCardStyle(i)}
-              >
-                <StepCard step={step} />
-              </div>
-            ))}
-          </div>
+            {/* Clip wrapper: rounded-3xl matches the card corners so they aren't squared off */}
+            <div className="absolute inset-0 overflow-hidden rounded-3xl">
+              {STEPS.map((step, i) => (
+                <div key={i} className="absolute inset-0" style={getCardStyle(i)}>
+                  <StepCard step={step} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
