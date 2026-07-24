@@ -60,18 +60,6 @@
       ]
     },
     {
-      bg: 'assets/images/hero-slide-3.png',
-      overlay: true,
-      heading: ['AI-Powered Approval', 'Automation'],
-      description: 'Automate approval workflows across your organization with intelligent routing, real-time notifications, and secure approvals from anywhere.',
-      stats: [
-        { value: '100+', label: 'Approval Scenarios' },
-        { value: '21+', label: 'Business Functions' },
-        { icon: true, label: 'Real-Time Workflow Visibility' },
-        { icon: true, label: 'Always-On AI Approval Assistant' }
-      ]
-    },
-    {
       bg: 'assets/images/hero-slide-4.png',
       overlay: false,
       heading: ['AI-Driven Transaction', 'Processing'],

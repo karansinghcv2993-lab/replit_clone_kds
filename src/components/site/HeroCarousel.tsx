@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import slide1Bg from "@/assets/hero-slide-1.png";
 import slide2Bg from "@/assets/hero-slide-2.png";
-import slide3Bg from "@/assets/hero-slide-3.png";
 import slide4Bg from "@/assets/hero-slide-4.png";
 import slide5Bg from "@/assets/hero-slide-5.png";
 import slide6Bg from "@/assets/hero-slide-6.png";
@@ -66,25 +65,6 @@ const SLIDES: Slide[] = [
       {
         value: <CheckCircle2 className="h-6 w-6 text-white" />,
         label: "Always-On Decision Intelligence",
-      },
-    ],
-  },
-  {
-    bg: slide3Bg,
-    overlay: true,
-    heading: ["AI-Powered Approval", "Automation"],
-    description:
-      "Automate approval workflows across your organization with intelligent routing, real-time notifications, and secure approvals from anywhere.",
-    stats: [
-      { value: "100+", label: "Approval Scenarios" },
-      { value: "21+", label: "Business Functions" },
-      {
-        value: <CheckCircle2 className="h-6 w-6 text-white" />,
-        label: "Real-Time Workflow Visibility",
-      },
-      {
-        value: <CheckCircle2 className="h-6 w-6 text-white" />,
-        label: "Always-On AI Approval Assistant",
       },
     ],
   },
