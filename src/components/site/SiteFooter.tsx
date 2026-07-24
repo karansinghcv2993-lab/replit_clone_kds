@@ -64,31 +64,36 @@ export function SiteFooter() {
             <p className="mt-2 text-sm leading-relaxed text-hero-muted">
               KDS ERP Crew is an AI-powered enterprise automation platform developed and owned by Key Dynamics Solutions. KDS empowers organizations with AI, ERP, CRM, Data Analytics, and Microsoft Power Platform solutions to simplify operations, automate business processes, and accelerate digital transformation.
             </p>
+          </div>
 
-            <p className="mt-5 text-sm font-semibold text-hero-foreground">
+          {/* ── Right: Want to know + Connect ── */}
+          <div className="flex flex-col gap-4 md:items-end md:text-right md:self-start">
+
+            {/* Want to know more — above Connect With KDS */}
+            <p className="text-sm font-semibold text-hero-foreground">
               Want to know more about KDS?
             </p>
-            <p className="mt-1 text-sm text-hero-muted">
+            <p className="max-w-xs text-sm leading-relaxed text-hero-muted">
               Discover our solutions, services, and success stories by visiting the KDS website.
             </p>
             <a
               href="https://keydynamicssolutions.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-white underline underline-offset-2 hover:opacity-80 transition-opacity"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-white underline underline-offset-2 hover:opacity-80 transition-opacity"
             >
               Visit KDS Website →
             </a>
-          </div>
 
-          {/* ── Right: Connect ── */}
-          <div className="flex flex-col gap-4 md:items-end md:text-right md:self-end">
+            {/* Divider */}
+            <div className="w-full border-t border-white/10" />
+
             <h3 className="text-base font-bold text-hero-foreground">Connect With KDS</h3>
-            <p className="max-w-xs text-sm leading-relaxed text-hero-muted md:text-right">
+            <p className="max-w-xs text-sm leading-relaxed text-hero-muted">
               Stay connected for the latest updates, AI innovations, ERP insights, and digital transformation stories.
             </p>
 
-            <div className="mt-2 flex items-center gap-4">
+            <div className="flex items-center gap-4">
               {SOCIALS.map((s) => (
                 <a
                   key={s.label}
