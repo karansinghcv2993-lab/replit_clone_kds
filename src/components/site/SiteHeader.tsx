@@ -43,7 +43,7 @@ export function SiteHeader() {
             className="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
             style={{ backgroundColor: "#051895" }}
           >
-            Request a Quote
+            Schedule Your AI Audit
           </a>
         </div>
       </div>
